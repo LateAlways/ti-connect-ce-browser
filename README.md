@@ -1,5 +1,3 @@
-
-<a name="readme-top"></a>
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -50,14 +48,12 @@ In most schools nowadays, students use chromebooks. These chromebooks are usuall
 
 There MAY be some bugs so USE AT YOUR OWN RISK.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 Simply grab the `latealways_patch.js` file and find a way to execute it before the rest of the code. A good example is in the `index.html` file here: [Example](https://github.com/LateAlways/latealways.github.io/blob/main/ticonnectce/index.html#L44)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -73,18 +69,6 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
@@ -92,9 +76,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 LateAlways - Discord: latealways - latealways.official@gmail.com
 
 Project Link: [https://github.com/LateAlways/ticonnectceapp](https://github.com/LateAlways/ticonnectceapp)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- ACKNOWLEDGMENTS -->
