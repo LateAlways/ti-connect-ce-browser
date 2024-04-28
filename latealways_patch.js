@@ -1,3 +1,7 @@
+if(document.location.href.startsWith("file:")) {
+    alert("This file cannot be opened in a browser directly. You must first upload it to a webserver.");
+    window.close();
+}
 let manifest = {
     update_url: "https://clients2.google.com/service/update2/crx",
     manifest_version: 2,
@@ -5,7 +9,7 @@ let manifest = {
     short_name: "TI Connect CE App",
     version: "0.1.0.9 Patched by LateAlways",
     version_name: "0.1.0.9",
-    description: "Manage USB connected Texas Instruments TI‑84 Plus CE graphing calculators",
+    description: "Manage USB connected Texas Instruments TIâ€‘84 Plus CE graphing calculators",
     icons: {
         16: "images/icon16.png",
         48: "images/icon48.png",
@@ -322,21 +326,12 @@ window.latealways_patch = {
             return device
         })
     },
+    pairDevice: () => latealways_patch.setUsbDevice([{vendorId: 1105, productId: 57347}, {vendorId: 1105, productId: 57352}])
 }
 
-
 document.addEventListener("DOMContentLoaded", (event) => {
-    waitForElementToExist("#TOOLBAR_LOGO").then(e => {
-        document.title = "TI Connect CE";
-
-        const pairDevice = () => latealways_patch.setUsbDevice([{vendorId: 1105, productId: 57347}, {vendorId: 1105, productId: 57352}]);
+    document.title = "TI Connect CE";
     
-        TOOLBAR_LOGO.addEventListener("click", pairDevice)
-        document.querySelectorAll(".ConnectCalcsHelp").values().forEach(e => e.addEventListener("click", pairDevice))
-    
-        TOOLBAR_LOGO.getElementsByTagName("text")[0].innerHTML = "Click here to select Calculator device"
-        
-    });
     let icon = document.createElement("link")
     icon.rel = "icon"
     icon.type = "image/x-icon"
