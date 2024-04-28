@@ -32,7 +32,7 @@
     <a href="#about-the-project">About The Project</a>
   </li>
   <li>
-    <a href="#getting-started">Getting Started</a>
+    <a href="#getting-started">Usage</a>
   </li>
   <li><a href="#contributing">Contributing</a></li>
   <li><a href="#contact">Contact</a></li>
@@ -49,13 +49,24 @@ In most schools nowadays, students use chromebooks. These chromebooks are usuall
 There MAY be some bugs so USE AT YOUR OWN RISK.
 
 
-<!-- GETTING STARTED -->
-## Getting Started
+## Usage
 
-Simply grab the `latealways_patch.js` file and find a way to execute it before the rest of the code. A good example is in the `index.html` file here: [Example](https://github.com/LateAlways/latealways.github.io/blob/main/ticonnectce/index.html#L44)
+For the install process (putting it on a webserver) the Automatic installation requires python code execution with access to the system.
+
+If you are using a chromebook, you can either use the demo from above or follow the Manual installation.
+
+### 1. Manual installation - Download extension files manually and patch manually files.
+1. Download the source code of the [TI Connect CE App for Chrome OS](https://chromewebstore.google.com/detail/ti-connect-ce-app-for-chr/aokihcpccmdjjkebakdanncddpdnkfla) extension. ([Here's an online CRX Viewer](https://robwu.nl/crxviewer))
+![load](images/load.gif)
+![load](images/download.gif)
+### 2. Automatic installation - Run a python script that will create a `www` folder that you can later on upload to a web server.
+1. Clone the repo. (`git clone https://github.com/LateAlways/ti-connect-ce-browser.git`)
+2. Enter the newly created directory. (`cd ti-connect-ce-browser`)
+3. Install requirements (`pip install -r requirements.txt`)
+4. Run `generate.py`. (`python generate.py`)
+5. Done! The files should be in a new folder titled `www`. You can upload these files anywhere on a webserver and then access the app from a browser.
 
 
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -70,7 +81,6 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 
-<!-- CONTACT -->
 ## Contact
 
 LateAlways - Discord: latealways - latealways.official@gmail.com
@@ -78,15 +88,6 @@ LateAlways - Discord: latealways - latealways.official@gmail.com
 Project Link: [https://github.com/LateAlways/ti-connect-ce-browser](https://github.com/LateAlways/ti-connect-ce-browser)
 
 
-<!-- ACKNOWLEDGMENTS -->
-<!--## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
--->
 ## Legal
 
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by TI (Texas Instruments) or any of its affiliates or subsidiaries. Use at your own risk.
