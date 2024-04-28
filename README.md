@@ -8,7 +8,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/LateAlways/ticonnectceapp">
+  <a href="https://github.com/LateAlways/ti-connect-ce-browser">
     <img src="https://wiki.tiplanet.org/images/c/cc/TI_Connect_CE_logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -19,7 +19,7 @@
     <br />
     <a href="https://latealways.is-a.dev/ticonnectce/">View Demo</a>
     ·
-    <a href="https://github.com/LateAlways/ticonnectceapp/issues">Report Bug</a>
+    <a href="https://github.com/LateAlways/ti-connect-ce-browser/issues">Report Bug</a>
   </p>
 </div>
 
@@ -75,7 +75,7 @@ Don't forget to give the project a star! Thanks again!
 
 LateAlways - Discord: latealways - latealways.official@gmail.com
 
-Project Link: [https://github.com/LateAlways/ticonnectceapp](https://github.com/LateAlways/ticonnectceapp)
+Project Link: [https://github.com/LateAlways/ti-connect-ce-browser](https://github.com/LateAlways/ti-connect-ce-browser)
 
 
 <!-- ACKNOWLEDGMENTS -->
@@ -93,11 +93,11 @@ This code is in no way affiliated with, authorized, maintained, sponsored or end
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/LateAlways/ticonnectceapp.svg?style=for-the-badge
-[contributors-url]: https://github.com/LateAlways/ticonnectceapp/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/LateAlways/ticonnectceapp.svg?style=for-the-badge
-[forks-url]: https://github.com/LateAlways/ticonnectceapp/network/members
-[stars-shield]: https://img.shields.io/github/stars/LateAlways/ticonnectceapp.svg?style=for-the-badge
-[stars-url]: https://github.com/LateAlways/ticonnectceapp/stargazers
-[issues-shield]: https://img.shields.io/github/issues/LateAlways/ticonnectceapp.svg?style=for-the-badge
-[issues-url]: https://github.com/LateAlways/ticonnectceapp/issues
+[contributors-shield]: https://img.shields.io/github/contributors/LateAlways/ti-connect-ce-browser.svg?style=for-the-badge
+[contributors-url]: https://github.com/LateAlways/ti-connect-ce-browser/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/LateAlways/ti-connect-ce-browser.svg?style=for-the-badge
+[forks-url]: https://github.com/LateAlways/ti-connect-ce-browser/network/members
+[stars-shield]: https://img.shields.io/github/stars/LateAlways/ti-connect-ce-browser.svg?style=for-the-badge
+[stars-url]: https://github.com/LateAlways/ti-connect-ce-browser/stargazers
+[issues-shield]: https://img.shields.io/github/issues/LateAlways/ti-connect-ce-browser.svg?style=for-the-badge
+[issues-url]: https://github.com/LateAlways/ti-connect-ce-browser/issues
