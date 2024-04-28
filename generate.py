@@ -142,6 +142,19 @@ with open("temp/www/templates/dialog-about.html", "w") as dialog_file:
 
 print("Patched dialog-about")
 
+print("Patching no-device")
+
+no_device_content = None
+with open("temp/www/templates/no-device.html", "r") as no_device_file:
+    no_device_content = no_device_file.read().replace("Connect a graphing calculator using the USB cable.", "Click here to pair calculator.").replace("class=\"ConnectCalcsHelp\"", "class=\"ConnectCalcsHelp\" onclick=\"latealways_patch.pairDevice()\" style=\"cursor: pointer\"")
+    no_device_file.close()
+
+with open("temp/www/templates/no-device.html", "w") as no_device_file:
+    no_device_file.write(no_device_content)
+    no_device_file.close()
+
+print("Patched no-device")
+
 print("Moving from temp to www...")
 import shutil
 shutil.move("temp/www", "./")
