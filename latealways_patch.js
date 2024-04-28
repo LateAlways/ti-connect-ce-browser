@@ -242,7 +242,7 @@ window.chrome.fileSystem = {
             }).catch(err => alert(err));
         } else if(options.type === "openFile") {
             chrome.runtime.lastError = undefined;
-            showOpenFilePicker({multiple: true, types: [{description: options.accepts[0].description, accept: {"application/octet-stream": options.accepts[0].extensions.map(s => "."+s)}}]}).then(fileEntries => {
+            showOpenFilePicker({multiple: options.acceptsMultiple || false, types: [{description: options.accepts[0].description, accept: {"application/octet-stream": options.accepts[0].extensions.map(s => "."+s)}}]}).then(fileEntries => {
                 let returnValue = [];
                 fileEntries.forEach(fileEntry => {
                     returnValue.push({
@@ -253,7 +253,11 @@ window.chrome.fileSystem = {
                         name: fileEntry.name
                     });
                 })
-                callback(returnValue);
+                if(options.acceptsMultiple) {
+                    callback(returnValue);
+                } else {
+                    callback(returnValue[0]);
+                }
             });
         }else if(options.type === "openDirectory") {
             callback([1]);
