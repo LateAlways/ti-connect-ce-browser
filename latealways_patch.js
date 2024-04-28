@@ -102,14 +102,16 @@ window.chrome.storage = {
             }
             then();
         },
-        get: (w, then) => {
-            if (!localStorage.getItem("emul_storage_sync_"+w) || w == "settings") {
+        get: async (w, then) => {
+            if (!localStorage.getItem("emul_storage_sync_"+w)) {
                 window.chrome.runtime.lastError = {message: "fail to get key."};
-                then({});
-            } else {
-                window.chrome.runtime.lastError = undefined;
+                //then({});
+                return then();
             }
 
+            await new Promise(res => setTimeout(res, 100));
+
+            window.chrome.runtime.lastError = undefined;
             then({ [w]: JSON.parse(localStorage.getItem("emul_storage_sync_"+w)) });
         },
         getBytesInUse: (w, then) => {
