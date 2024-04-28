@@ -99,7 +99,7 @@ window.chrome.storage = {
             then();
         },
         get: (w, then) => {
-            if (!localStorage.getItem("emul_storage_sync_"+w)) {
+            if (!localStorage.getItem("emul_storage_sync_"+w) || w == "settings") {
                 window.chrome.runtime.lastError = {message: "fail to get key."};
             } else {
                 window.chrome.runtime.lastError = undefined;
