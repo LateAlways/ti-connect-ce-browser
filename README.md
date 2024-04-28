@@ -44,7 +44,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-In most schools nowadays, students use chromebooks. These chromebooks are usually locked down so you can't install games and other non-school related stuff. I believe this app should always have been available online the same way it is already for the TI-Nspire™ CX II. (https://nspireconnect.ti.com/nsc/) As a student myself, I found it pretty hard to find a program that works exactly the same as [TI Connect CE](https://education.ti.com/en/products/computer-software/ti-connect-ce-sw) The app most similar to a website was of course the one on the webstore so I went ahead, downloaded it and started patching everything. It works by emulating the environment of a platform app in a browser.
+In most schools nowadays, students use chromebooks. These chromebooks are usually locked down so you can't install games and other non-school related stuff. I believe this app should always have been available online the same way it is already for the TI-Nspire™ CX II. ([https://nspireconnect.ti.com/nsc/](https://nspireconnect.ti.com/nsc/)) As a student myself, I found it pretty hard to find a program that works exactly the same as [TI Connect CE](https://education.ti.com/en/products/computer-software/ti-connect-ce-sw) The app most similar to a website was of course the one on the webstore so I went ahead, downloaded it and started patching everything. It works by emulating the environment of a platform app in a browser.
 
 There MAY be some bugs so USE AT YOUR OWN RISK.
 
