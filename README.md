@@ -55,7 +55,7 @@ For the install process (putting it on a webserver) the Automatic installation r
 
 If you are using a chromebook, you can either use the demo from above or follow the Manual installation.
 
-### 1. Manual installation - Download extension files manually and patch manually files.
+### 1. Manual installation - Download extension files and patch files manually.
 1. Download the source code of the [TI Connect CE App for Chrome OS](https://chromewebstore.google.com/detail/ti-connect-ce-app-for-chr/aokihcpccmdjjkebakdanncddpdnkfla) extension. ([Here's an online CRX Viewer](https://robwu.nl/crxviewer))
 ![load](images/load.gif)
 ![load](images/download.gif)
