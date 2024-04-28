@@ -12,10 +12,10 @@
     <img src="https://wiki.tiplanet.org/images/c/cc/TI_Connect_CE_logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">TI Connect CE Patched</h3>
+<h3 align="center">TI Connect CE Browser</h3>
 
   <p align="center">
-    A patched version of TI Connect CE for Chrome OS that works in the browser without installing
+    A patched version of TI Connect CE for Chrome OS that works in the browser without installing anything
     <br />
     <a href="https://latealways.is-a.dev/ticonnectce/">View Demo</a>
     ·
