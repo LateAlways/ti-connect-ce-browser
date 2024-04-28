@@ -62,9 +62,8 @@ If you are using a chromebook, you can either use the demo from above or follow 
 ### 2. Automatic installation - Run a python script that will create a `www` folder that you can later on upload to a web server.
 1. Clone the repo. (`git clone https://github.com/LateAlways/ti-connect-ce-browser.git`)
 2. Enter the newly created directory. (`cd ti-connect-ce-browser`)
-3. Install requirements (`pip install -r requirements.txt`)
-4. Run `generate.py`. (`python generate.py`)
-5. Done! The files should be in a new folder titled `www`. You can upload these files anywhere on a webserver and then access the app from a browser.
+3. Run `generate.py`. (`python generate.py`)
+4. Done! The files should be in a new folder titled `www`. You can upload these files anywhere on a webserver and then access the app from a browser.
 
 
 ## Contributing
