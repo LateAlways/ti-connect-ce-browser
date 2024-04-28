@@ -17,7 +17,7 @@
   <p align="center">
     A patched version of TI Connect CE for Chrome OS that works in the browser without installing
     <br />
-    <a href="https://latealways.github.io/ticonnectce/">View Demo</a>
+    <a href="https://latealways.is-a.dev/ticonnectce/">View Demo</a>
     ·
     <a href="https://github.com/LateAlways/ticonnectceapp/issues">Report Bug</a>
   </p>
