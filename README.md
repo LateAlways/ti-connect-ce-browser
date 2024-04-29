@@ -55,15 +55,8 @@ For the install process (putting it on a webserver) the Automatic installation r
 
 If you are using a chromebook, you can either use the demo from above or follow the Manual installation.
 
-### 1. Manual installation - Download extension files and patch files manually.
-1. Download the source code of the [TI Connect CE App for Chrome OS](https://chromewebstore.google.com/detail/ti-connect-ce-app-for-chr/aokihcpccmdjjkebakdanncddpdnkfla) extension. ([Here's an online CRX Viewer](https://robwu.nl/crxviewer))
-![load](images/load.gif)
-![load](images/download.gif)
-2. Once downloaded, unzip it.
-3. Insert the `latealways_patch.js` file inside.
-4. Add this line `<script src="latealways_patch.js"></script>` to the top of index.html.
-5. In `templates/dialog-about.html`, replace `../images/TI logo @2x.png` with `images/TI logo @2x.png`
-6. Done! You can upload these files anywhere on a webserver and then access the app from a browser.
+### 1. Manual installation - DEPRECATED. USE AUTOMATIC INSTALLATION INSTEAD
+THIS DOESN'T WORK ANYMORE.
 ### 2. Automatic installation - Run a python script that will create a `www` folder that you can later on upload to a web server.
 1. Clone the repo. (`git clone https://github.com/LateAlways/ti-connect-ce-browser.git`)
 2. Enter the newly created directory. (`cd ti-connect-ce-browser`)
