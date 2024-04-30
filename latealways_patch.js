@@ -2,6 +2,9 @@ if(document.location.href.startsWith("file:")) {
     alert("This file cannot be opened in a browser directly. You must first upload it to a webserver.");
     window.close();
 }
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+}
 let manifest = {
     update_url: "https://clients2.google.com/service/update2/crx",
     manifest_version: 2,
@@ -337,7 +340,7 @@ window.latealways_patch = {
 
 document.addEventListener("DOMContentLoaded", (event) => {
     document.title = "TI Connect CE";
-    
+
     let icon = document.createElement("link")
     icon.rel = "icon"
     icon.type = "image/x-icon"

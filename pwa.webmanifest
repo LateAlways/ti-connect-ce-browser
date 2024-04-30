@@ -1,0 +1,16 @@
+{
+    "background_color": "#000000",
+    "description": "Manage USB connected Texas Instruments TIâ€‘84 Plus CE graphing calculators",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "images/icon128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      }
+    ],
+    "name": "TI Connect CE",
+    "orientation": "portrait",
+    "short_name": "TI Connect CE",
+    "start_url": "./"
+  }

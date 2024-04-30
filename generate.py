@@ -1,8 +1,8 @@
 import sys
 import os
-import re
 import struct
 import zipfile
+import shutil
 
 try:
     set
@@ -30,11 +30,9 @@ def fetch(url):
 
 # remove old dir
 if os.path.exists("temp"):
-    import shutil
     shutil.rmtree("temp")
 
 if os.path.exists("www"):
-    import shutil
     shutil.rmtree("www")
 
 os.makedirs("temp", exist_ok=True)
@@ -104,24 +102,23 @@ with zipfile.ZipFile("temp/extension.zip", "r") as zip_ref:
 
 print("Extension extracted.")
 
-print("Downloading patch file...")
+print("Copying patch file...")
 
-patch_url = "https://raw.githubusercontent.com/LateAlways/ti-connect-ce-browser/main/latealways_patch.js"
+shutil.copy("latealways_patch.js", "temp/www/latealways_patch.js")
 
-content = fetch(patch_url)
+print("Copied patch file.")
 
-print("Patch file downloaded.")
-with open("temp/www/latealways_patch.js", "wb") as patch_out:
-    patch_out.write(content)
-    patch_out.close()
+print("Copying webmanifest...")
 
-print("Patch file saved.")
+shutil.copy("pwa.webmanifest", "temp/www/pwa.webmanifest")
+
+print("Copied webmanifest.")
 
 print("Patching index.html...")
 
 newhtml = ""
 with open("temp/www/index.html", "r") as index_file:
-    newhtml = "<script src=\"latealways_patch.js\"></script>\n"+index_file.read()
+    newhtml = "<script src=\"latealways_patch.js\"></script>\n"+(index_file.read().replace("        <title>", '        <link rel="manifest" href="pwa.webmanifest">\n        <title>'))
     index_file.close()
 
 with open("temp/www/index.html", "w") as index_file:
@@ -156,10 +153,68 @@ with open("temp/www/templates/no-device.html", "w") as no_device_file:
 print("Patched no-device")
 
 print("Moving from temp to www...")
-import shutil
+
 shutil.move("temp/www", "./")
 
 print("Moved to www")
+
+print("Generating Service Worker...")
+
+files_in_www = []
+for root, dirs, files in os.walk("www/"):
+    for file in files:
+        files_in_www.append(os.path.join(root[4:], file))
+
+
+out = "const FILES_TO_CACHE = [\n    \"/\",\n"
+for file in files_in_www:
+    out += f'    "{file.replace("\\", "/")}",\n'
+
+out += "];\n"
+
+out += """
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => caches.delete(cacheName))
+      );
+    })
+  );
+})
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open('v1')
+      .then(cache => cache.addAll(FILES_TO_CACHE))
+  );
+});
+
+self.addEventListener("fetch", event => {
+  event.respondWith(
+    caches.match(event.request).then(async response => {
+      let response2;
+      if(navigator.onLine) {
+        response2 = fetch(event.request).then(response => {
+          caches.open('v1').then(cache => {
+            cache.put(event.request, response.clone());
+          });
+          return response.clone();
+        });
+      }
+      if(response) {
+        return response;
+      } else {
+        return await response2;
+      }
+    })
+  );
+});
+
+"""
+
+with open("www/sw.js", "w") as f:
+    f.write(out)
 
 print("Cleaning up...")
 
