@@ -242,7 +242,7 @@ window.chrome.fileSystem = {
                                 blob = new Blob([pyData], {type: "application/x-python"});
 
                                 options.suggestedName = options.suggestedName.substr(0,options.suggestedName.length-4)+".py";
-                                options.accepts[0].extensions.push("py");
+                                options.accepts[0].extensions = ["py"];
                             }
                             showSaveFilePicker({suggestedName: options.suggestedName, types: [{accept: {"application/octet-stream": options.accepts[0].extensions.map(s => "."+s)}}]}).then(async fileEntry => {
                                 let writable = await fileEntry.createWritable();
