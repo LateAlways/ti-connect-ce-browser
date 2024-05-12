@@ -66,7 +66,7 @@ THIS DOESN'T WORK ANYMORE.
 
 ## Credits
 
-The python file conversion in real-time wouldn't have been possible without [this project](https://github.com/adriweb/tivars_lib_cpp/blob/master/LICENSE).
+The python file conversion in real-time wouldn't have been possible without [this library](https://github.com/adriweb/tivars_lib_cpp).
 
 ## Contributing
 
