@@ -34,6 +34,7 @@
   <li>
     <a href="#getting-started">Usage</a>
   </li>
+  <li><a href="#credits">Contributing</a></li>
   <li><a href="#contributing">Contributing</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#legal">Legal</a></li>
@@ -63,6 +64,9 @@ THIS DOESN'T WORK ANYMORE.
 3. Run `generate.py`. (`python generate.py`)
 4. Done! The files should be in a new folder titled `www`. You can upload these files anywhere on a webserver and then access the app from a browser.
 
+## Credits
+
+The python file conversion in real-time wouldn't have been possible without [this library](https://github.com/adriweb/tivars_lib_cpp).
 
 ## Contributing
 
@@ -83,7 +87,6 @@ Don't forget to give the project a star! Thanks again!
 LateAlways - Discord: latealways - latealways.official@gmail.com
 
 Project Link: [https://github.com/LateAlways/ti-connect-ce-browser](https://github.com/LateAlways/ti-connect-ce-browser)
-
 
 ## Legal
 
