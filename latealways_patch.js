@@ -108,7 +108,6 @@ window.chrome.storage = {
         get: async (w, then) => {
             if (!localStorage.getItem("emul_storage_sync_"+w)) {
                 window.chrome.runtime.lastError = {message: "fail to get key."};
-                //then({});
                 return then();
             }
 
@@ -225,42 +224,88 @@ window.chrome.fileSystem = {
     chooseEntry: async (options, callback) => {
         if(options.type === "saveFile") {
             chrome.runtime.lastError = undefined;
-            showSaveFilePicker({suggestedName: options.suggestedName, types: [{accept: {"application/octet-stream": options.accepts[0].extensions.map(s => "."+s)}}]}).then(fileEntry => {
-                callback({
-                    createWriter: async (callback2) => {
-                        let writable = await fileEntry.createWritable();
-                        let writer = {
-                            truncate: () => {},
-                            position: 0,
-                            onwriteend: () => {},
-                            write: async (blob) => {
+            callback({
+                createWriter: (callback2) => {
+                    let writer = {
+                        truncate: () => {},
+                        position: 0,
+                        onwriteend: () => {},
+                        write: async (blob) => {
+                            let arrayBuffer = new TI_File(new Uint8Array(await blob.arrayBuffer())).fileData;
+                            // analyze blob to see if its a python appvar
+                            let appvarid = arrayBuffer[2] << 24 | arrayBuffer[3] << 16 | arrayBuffer[4] << 8 | arrayBuffer[5];
+                            if(appvarid === 1348027204) {
+                                // convert to appvar to py
+                                lib.FS.writeFile("./"+options.suggestedName, new Uint8Array(await blob.arrayBuffer()));
+                                let pythonAppvar = lib.TIVarFile.loadFromFile("./"+options.suggestedName);
+                                let pyData = pythonAppvar.getReadableContent();
+                                blob = new Blob([pyData], {type: "application/x-python"});
+
+                                options.suggestedName = options.suggestedName.substr(0,options.suggestedName.length-4)+".py";
+                                options.accepts[0].extensions.push("py");
+                            }
+                            showSaveFilePicker({suggestedName: options.suggestedName, types: [{accept: {"application/octet-stream": options.accepts[0].extensions.map(s => "."+s)}}]}).then(async fileEntry => {
+                                let writable = await fileEntry.createWritable();
+                                
                                 await writable.write(blob);
                                 await writable.close();
                                 writer.onwriteend();
-                            }
+                            });
                         }
-                        callback2(writer);
                     }
-                });
-            }).catch(err => alert(err));
+                    callback2(writer);
+                }
+            });
+            
         } else if(options.type === "openFile") {
             chrome.runtime.lastError = undefined;
-            showOpenFilePicker({multiple: options.acceptsMultiple || false, types: [{description: options.accepts[0].description, accept: {"application/octet-stream": options.accepts[0].extensions.map(s => "."+s)}}]}).then(fileEntries => {
+            let extensions = options.accepts[0].extensions.map(s => "."+s);
+            extensions.push(".py");
+            showOpenFilePicker({multiple: options.acceptsMultiple || false, types: [{description: options.accepts[0].description, accept: {"application/octet-stream": extensions}}]}).then(async fileEntries => {
                 let returnValue = [];
-                fileEntries.forEach(fileEntry => {
-                    returnValue.push({
-                        file: async (s) => {
-                            s(await fileEntry.getFile());
-                            return await fileEntry.getFile();
-                        },
-                        name: fileEntry.name
-                    });
+                let files = new Promise((res, rej) => {
+                    fileEntries.forEach(async fileEntry => {
+                        if(fileEntry.name.substr(fileEntry.name.length-3, fileEntry.name.length).toLowerCase() === ".py") {
+                            let newfilename = fileEntry.name.substr(0,fileEntry.name.length-3).substr(0,8).toUpperCase();
+                            let pythonappvar = lib.TIVarFile.createNew(lib.TIVarType.createFromName("PythonAppVar"), newfilename, lib.TIModel.createFromName("84+CEPy"));
+    
+                            let filecontent = await fileEntry.getFile();
+                            await filecontent.arrayBuffer().then(buffer => {
+                                pythonappvar.setContentFromString(buffer);
+                            });
+    
+                            let output = pythonappvar.saveVarToFile("", newfilename)
+                            let rawdata = lib.FS.readFile(output, {encoding: "binary"});
+                            returnValue.push({
+                                file: async (s) => {
+
+                                    let out = new File([rawdata], newfilename+".8xv", {type: "application/octet-stream"});
+                                    s(out);
+                                    return out;
+                                },
+                                name: newfilename+".8xv"
+                            });
+                        } else {
+                            returnValue.push({
+                                file: async (s) => {
+                                    let out = await fileEntry.getFile();
+                                    console.log(out);
+                                    s(out);
+                                    return out;
+                                },
+                                name: fileEntry.name
+                            });
+                        }
+                        if(returnValue.length === fileEntries.length) res();
+                    })
                 })
-                if(options.acceptsMultiple) {
-                    callback(returnValue);
-                } else {
-                    callback(returnValue[0]);
-                }
+                files.then(() => {
+                    if(options.acceptsMultiple) {
+                        callback(returnValue);
+                    } else {
+                        callback(returnValue[0]);
+                    }
+                });
             });
         }else if(options.type === "openDirectory") {
             callback([1]);
@@ -271,25 +316,38 @@ window.chrome.fileSystem = {
     getWritableEntry: (filehandle, callback) => {
         let retval = {
             getFile: async (filename, options, callback2) => {
-                showSaveFilePicker({suggestedName: filename}).then(fileEntry => {
-                    callback2({
-                        createWriter: async (callback3) => {
-                            let writable = await fileEntry.createWritable();
-                            let writer = {
-                                truncate: () => {},
-                                position: 0,
-                                write: async (blob) => {
+                callback2({
+                    createWriter: async (callback3) => {
+                        let writer = {
+                            truncate: () => {},
+                            position: 0,
+                            write: async (blob) => {
+                                let arrayBuffer = new TI_File(new Uint8Array(await blob.arrayBuffer())).fileData;
+                                // analyze blob to see if its a python appvar
+                                let appvarid = arrayBuffer[2] << 24 | arrayBuffer[3] << 16 | arrayBuffer[4] << 8 | arrayBuffer[5];
+                                if(appvarid === 1348027204) {
+                                    // convert to appvar to py
+                                    lib.FS.writeFile("./"+filename, new Uint8Array(await blob.arrayBuffer()));
+                                    let pythonAppvar = lib.TIVarFile.loadFromFile("./"+filename);
+                                    let pyData = pythonAppvar.getReadableContent();
+                                    blob = new Blob([pyData], {type: "application/x-python"});
+
+                                    filename = filename.substr(0,filename.length-4)+".py";
+                                }
+                                showSaveFilePicker({suggestedName: filename}).then(async fileEntry => {
+                                    let writable = await fileEntry.createWritable();
+
                                     await writable.write(blob);
                                     await writable.close();
                                     writer.onwriteend();
-                                },
-                                onwriteend: () => {}
-                            }
-                            callback3(writer);
+                                }).catch(err => setTimeout(() => writer.write(blob), 100));
+                                
+                            },
+                            onwriteend: () => {}
                         }
-                    })
-                }).catch(err => setTimeout(() => retval.getFile(filename,options,callback2), 100));
-                
+                        callback3(writer);
+                    }
+                })
             }
         }
         callback(retval)
@@ -338,6 +396,12 @@ window.latealways_patch = {
     pairDevice: () => latealways_patch.setUsbDevice([{vendorId: 1105, productId: 57347}, {vendorId: 1105, productId: 57352}])
 }
 
+window.hookfunction = (parent, func, newfunc) => {
+    let oldfunc = parent[func];
+    parent[func] = newfunc.bind(parent);
+    return oldfunc;
+}
+
 document.addEventListener("DOMContentLoaded", (event) => {
     document.title = "TI Connect CE";
 
@@ -351,4 +415,50 @@ document.addEventListener("DOMContentLoaded", (event) => {
     waitForElementToExist("#toolbar_add_from_comp").then(e => {
         angular.element('#toolbar_add_from_comp').controller().fileTypes.PROTECTED_PROGRAM = {name:"Protected Program",icon:"images/filetype_program.svg"}
     })
+
+    let oldHandleDrop;
+    oldHandleDrop = hookfunction(angular.element("body").scope(), "handleDrop", async (e) => {
+        let newe = {
+            preventDefault: () => {},
+            stopPropagation: () => {}
+        };
+        e.preventDefault();
+        e.stopPropagation();
+        let items = e.dataTransfer.items;
+        newe.dataTransfer = {
+            items: []
+        }
+        for(let i = 0; i < items.length; i++) {
+            let name = items[i].getAsFile().name;
+            if(name.substr(name.length-3, name.length).toLowerCase() === ".py") {
+                let newfilename = name.substr(0,name.length-3).substr(0,8).toUpperCase();
+                let pythonappvar = lib.TIVarFile.createNew(lib.TIVarType.createFromName("PythonAppVar"), newfilename, lib.TIModel.createFromName("84+CEPy"));
+
+                let filecontent = await items[i].getAsFile().arrayBuffer();
+                pythonappvar.setContentFromString(filecontent);
+
+                let output = pythonappvar.saveVarToFile("", newfilename)
+                let rawdata = lib.FS.readFile(output, {encoding: "binary"});
+                newe.dataTransfer.items.push({
+                    webkitGetAsEntry: () => {
+                        return {
+                            name: newfilename+".8xv",
+                            file: async (s) => {
+                                let out = new File([rawdata], newfilename+".8xv", {type: "application/octet-stream"});
+                                s(out);
+                                return out;
+                            }
+                        }
+                    }
+                });
+            } else {
+                newe.dataTransfer.items.push(items[i]);
+            }
+        }
+        return oldHandleDrop(newe);
+    })
 });
+
+import TIVarsLib from "./TIVarsLib.js"
+window.lib = null;
+TIVarsLib().then(result => window.lib = result);

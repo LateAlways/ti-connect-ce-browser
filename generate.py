@@ -114,6 +114,11 @@ shutil.copy("pwa.webmanifest", "temp/www/pwa.webmanifest")
 
 print("Copied webmanifest.")
 
+print("Copying TIVarsLib...")
+
+shutil.copytree("TIVarsLib.js", "temp/www/TIVarsLib.js")
+shutil.copytree("TIVarsLib.wasm", "temp/www/TIVarsLib.wasm")
+
 print("Patching index.html...")
 
 newhtml = ""
