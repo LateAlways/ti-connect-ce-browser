@@ -116,8 +116,8 @@ print("Copied webmanifest.")
 
 print("Copying TIVarsLib...")
 
-shutil.copytree("TIVarsLib.js", "temp/www/TIVarsLib.js")
-shutil.copytree("TIVarsLib.wasm", "temp/www/TIVarsLib.wasm")
+shutil.copy("TIVarsLib.js", "temp/www/TIVarsLib.js")
+shutil.copy("TIVarsLib.wasm", "temp/www/TIVarsLib.wasm")
 
 print("Patching index.html...")
 
