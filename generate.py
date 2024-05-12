@@ -123,7 +123,7 @@ print("Patching index.html...")
 
 newhtml = ""
 with open("temp/www/index.html", "r") as index_file:
-    newhtml = "<script src=\"latealways_patch.js\"></script>\n"+(index_file.read().replace("        <title>", '        <link rel="manifest" href="pwa.webmanifest">\n        <title>'))
+    newhtml = "<script type=\"module\" src=\"latealways_patch.js\"></script>\n"+(index_file.read().replace("        <title>", '        <link rel="manifest" href="pwa.webmanifest">\n        <title>'))
     index_file.close()
 
 with open("temp/www/index.html", "w") as index_file:
