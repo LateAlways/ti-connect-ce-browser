@@ -17,7 +17,7 @@
   <p align="center">
     A patched version of TI Connect CE for Chrome OS that works in the browser without installing anything
     <br />
-    <a href="https://latealways.is-a.dev/ticonnectce/">View Demo</a>
+    <a href="https://ticonnectce.latealways.dev/">View Demo</a>
     ·
     <a href="https://github.com/LateAlways/ti-connect-ce-browser/issues">Report Bug</a>
   </p>
@@ -66,7 +66,7 @@ THIS DOESN'T WORK ANYMORE.
 
 ## Credits
 
-The python file conversion in real-time wouldn't have been possible without [this library](https://github.com/adriweb/tivars_lib_cpp).
+The real-time python file conversion wouldn't have been possible without [tivars_lib_cpp](https://github.com/adriweb/tivars_lib_cpp) by adriweb.
 
 ## Contributing
 
