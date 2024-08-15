@@ -94,4 +94,6 @@ Object.defineProperty(this, "response", {
 
 offline_file += generate_offline()
 
-print(offline_file)
+with open("www/offline.html", "w") as offline:
+    offline.write(offline_file)
+    offline.close()
