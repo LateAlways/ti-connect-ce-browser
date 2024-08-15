@@ -1,8 +1,4 @@
-if(document.location.href.startsWith("file:")) {
-    alert("This file cannot be opened in a browser directly. You must first upload it to a webserver.");
-    window.close();
-}
-if ("serviceWorker" in navigator) {
+if ("serviceWorker" in navigator && !document.location.href.startsWith("file:")) {
     navigator.serviceWorker.register("sw.js");
 }
 let manifest = {
@@ -458,7 +454,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
         return oldHandleDrop(newe);
     })
 });
-
-import TIVarsLib from "./TIVarsLib.js"
-window.lib = null;
-TIVarsLib().then(result => window.lib = result);
