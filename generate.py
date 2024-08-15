@@ -174,7 +174,7 @@ for root, dirs, files in os.walk("www/"):
 out = "const FILES_TO_CACHE = [\n    \"/\",\n"
 for file in files_in_www:
     if "_metadata" not in file:
-        out += f'    "{file.replace("\\", "/")}",\n'
+        out += '    "'+file.replace("\\", "/")+'",\n'
 
 out += "];\n"
 
