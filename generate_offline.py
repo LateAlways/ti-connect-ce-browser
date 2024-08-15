@@ -3,7 +3,7 @@ import os
 import re
 import base64
 
-#generate.generate_patched(False)
+generate.generate_patched(False)
 
 def get_all_files_to_offline():
     files_in_www = []
