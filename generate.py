@@ -10,9 +10,6 @@ except NameError:
     from sets import Set as set
 
 def generate_patched(online=True):
-    if not online:
-        print = lambda *args, **kwargs: None
-        
     if sys.version_info.major >= 3:
         import urllib.request
 
