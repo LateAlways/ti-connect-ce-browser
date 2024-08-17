@@ -204,9 +204,12 @@ TIVarsLib().then(result => window.lib = result);""")
         let response2;
         if(navigator.onLine) {
             response2 = fetch(event.request).then(response => {
-            caches.open('v1').then(cache => {
-                cache.put(event.request, response.clone());
-            });
+            let statuscode = response.status;
+            if(statuscode == 200) {
+                caches.open('v1').then(cache => {
+                    cache.put(event.request, response.clone());
+                });
+            }
             return response.clone();
             });
         }

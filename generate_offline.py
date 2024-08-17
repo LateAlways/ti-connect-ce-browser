@@ -13,24 +13,6 @@ def get_all_files_to_offline():
     
     return files_in_www
 
-tivarslib = "<script>"+open("www/TIVarsLib.js").read().replace("import.meta.url", "\"\"").replace("export default TIVarsLib;", "window.lib = TIVarsLib();")+"</script>"
-
-offline_file = tivarslib+"""
-<script>
-let rawOpen = XMLHttpRequest.prototype.open;
-XMLHttpRequest.prototype.open = function () {
-    console.log("Fetching: "+arguments[1]+"...");
-    this.requestURL = arguments[1];
-    return rawOpen.apply(this, arguments)
-}
-let rawSend = XMLHttpRequest.prototype.send;
-XMLHttpRequest.prototype.send = function () {
-    let parsedURL = new URL(this.requestURL, "http://example.com/");
-    this.statusText = "LOADING";
-    this.status = 200;
-    let response;
-"""
-
 def generate_offline(html="index.html"):
     temp = open("www/"+html, "r").read()
     for jsscript in re.findall(r"<script.*?src=\"(.*?)\".*?>", temp):
@@ -47,49 +29,41 @@ def generate_offline(html="index.html"):
         
     return temp
 
+offline_file = """
+<script>
+function get_data_by_filename(parsedURL){"""
 for file in get_all_files_to_offline():
-    offline_file += """
-    if(parsedURL.pathname == new URL(\""""+file+"""\", "http://example.com/").pathname) {
-        response = atob(\""""+base64.b64encode(open("www/"+file, "rb").read() if file[-5:] != ".html" else generate_offline(file).encode()).decode()+"""\");
-    }
-    """
+    offline_file += """if(parsedURL.pathname==new URL(\""""+file+"""\","http://example.com/").pathname)return atob(\""""+base64.b64encode(open("www/"+file, "rb").read() if file[-5:] != ".html" else generate_offline(file).encode()).decode()+"""\"); """
+offline_file += """}
+let rawOpen = XMLHttpRequest.prototype.open;
+XMLHttpRequest.prototype.open=function(){console.log("Fetching: "+arguments[1]+"...");this.requestURL=arguments[1];return rawOpen.apply(this,arguments)}
+let rawSend = XMLHttpRequest.prototype.send;
+XMLHttpRequest.prototype.send = function () {
+    let parsedURL = new URL(this.requestURL,"http://example.com/");
+    this.statusText = "LOADING";
+    this.status = 200;
+    let response = get_data_by_filename(parsedURL);
 
-offline_file += """
-if(response) {
-Object.defineProperty(this, "response", {
-            get: function() {
-                return response;
-            }
-        });
-        Object.defineProperty(this, "responseText", {
-            get: function() {
-                return response;
-            }
-        });
-        Object.defineProperty(this, "responseURL", {
-            get: function() {
-                return this.requestURL;
-            }
-        });
-        Object.defineProperty(this, "statusText", {
-            get: function() {
-                return "OK";
-            }
-        });
-        Object.defineProperty(this, "status", {
-            get: function() {
-                return 200;
-            }
-        });
-        Object.defineProperty(this, "readyState", {
-            get: function() {
-                return 4;
-            }
-        });        
+    if(response) {
+        Object.defineProperty(this, "response", {get: function() { return response; }});
+        Object.defineProperty(this, "responseText", {get: function() {return response;}});
+        Object.defineProperty(this, "responseURL", {get: function() {return this.requestURL;}});
+        Object.defineProperty(this, "statusText", {get: function() {return "OK";}});
+        Object.defineProperty(this, "status", {get: function() {return 200;}});
+        Object.defineProperty(this, "readyState", {get: function() {return 4;}});
         this.onload();
     }
 }
-</script>"""
+let oldImage = Image.prototype.constructor;
+Image.prototype.constructor = function(width, height) {
+    Object.defineProperty(this, "src", {get: function() { return this.src; }, set: function(newvalue) { this.src = get_data_by_filename(new URL(newvalue,"http://example.com/")); }})
+    return oldImage(width, height);
+}
+
+
+afterload();
+function afterload() {
+"""+open("www/TIVarsLib.js").read().replace("import.meta.url", "\"http://example.com/\"").replace("export default TIVarsLib;", "window.lib = TIVarsLib();")+" }</script>"
 
 
 offline_file += generate_offline()
