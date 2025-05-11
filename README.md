@@ -34,7 +34,7 @@
   <li>
     <a href="#getting-started">Usage</a>
   </li>
-  <li><a href="#credits">Contributing</a></li>
+  <li><a href="#credits">Credits</a></li>
   <li><a href="#contributing">Contributing</a></li>
   <li><a href="#contact">Contact</a></li>
   <li><a href="#legal">Legal</a></li>
