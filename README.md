@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/LateAlways/ti-connect-ce-browser">
-    <img src="https://wiki.tiplanet.org/images/c/cc/TI_Connect_CE_logo.png" alt="Logo" width="80" height="80">
+    <img src="https://cdn.ti-planet.org/wiki/images/c/cc/TI_Connect_CE_logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">TI Connect CE Browser</h3>
