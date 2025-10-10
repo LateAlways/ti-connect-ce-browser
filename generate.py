@@ -125,7 +125,16 @@ TIVarsLib().then(result => window.lib = result);""")
 
     newhtml = ""
     with open("temp/www/index.html", "r") as index_file:
-        newhtml = "<script type=\"module\" src=\"latealways_patch.js\"></script>\n"+(index_file.read().replace("        <title>", '        <link rel="manifest" href="pwa.webmanifest">\n        <title>'))
+        html_content = index_file.read()
+        # Patch manifest and latealways_patch.js
+        html_content = "<script type=\"module\" src=\"latealways_patch.js\"></script>\n" + html_content.replace(
+            "        <title>",
+            '        <link rel="manifest" href="pwa.webmanifest">\n        <title>'
+        )
+        # Inject Eruda before </body>
+        eruda_script = '\n<script src="https://cdn.jsdelivr.net/npm/eruda"></script>\n<script>eruda.init();</script>\n'
+        html_content = html_content.replace("</body>", eruda_script + "</body>")
+        newhtml = html_content
         index_file.close()
 
     with open("temp/www/index.html", "w") as index_file:
