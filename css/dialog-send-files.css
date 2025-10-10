@@ -1,0 +1,110 @@
+#DialogSendFiles {
+}
+
+#DialogSendFiles TABLE {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-bottom: 1px /*0.0625rem*/ solid #d1d2d4;
+}
+
+#DialogSendFiles TR {
+    height: 2.5rem;
+}
+
+#DialogSendFiles TD {
+    vertical-align: middle;
+}
+
+#DialogSendFiles THEAD {
+    display: block;
+}
+
+#DialogSendFiles THEAD TD {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#DialogSendFiles TBODY {
+    /*border: 0.0625rem solid #d1d2d4;*/
+    border: 1px solid #d1d2d4;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 13rem;
+}
+
+#DialogSendFiles TBODY TD {
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+
+#DialogSendFiles TBODY TR {
+    /* border-bottom: 0.0625rem solid #d1d2d4; */
+    border-bottom: 1px solid #e7e7e8;
+}
+
+#DialogSendFiles TBODY TR:last-child {
+    border-bottom: 0 solid black;
+}
+
+#DialogSendFiles TD.ColName {
+    width: 10.6875rem;
+    max-width: 10.6875rem;
+    min-width: 10.6875rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 0.25rem;
+}
+
+#DialogSendFiles TD.ColWarn {
+    width: 2.125rem;
+    max-width: 2.125rem;
+    min-width: 2.125rem;
+}
+
+#DialogSendFiles TD.ColDevName {
+    width: 14.0625rem;
+    max-width: 14.0625rem;
+    min-width: 14.0625rem;
+    padding-left: 0.25rem;
+}
+
+#DialogSendFiles TD.ColDevName SELECT {
+    width: 10rem;
+}
+
+#DialogSendFiles TD.ColLocation {
+    width: 8.4375rem;
+    max-width: 8.4375rem;
+    min-width: 8.4375rem;
+}
+
+#DialogSendFiles TD.ColLocation SELECT {
+    width: 7.75rem;
+}
+
+#DialogSendFiles TD.ColDelete {
+    width: 1.5rem;
+    /* these are to make sure there is enough room for the scroll bar when scaled down */
+    padding-left: 0.5rem;
+    padding-right: 17px;
+}
+
+#DialogSendFiles TD.ColDelete SVG {
+    position: relative;
+    width: 1.5rem;
+    top: 0.25rem;
+}
+
+#DialogSendFiles TD.ColDelete SVG .icon_fill {
+    fill: #444;
+}
+
+#DialogSendFiles .options {
+    margin-top: 2.5rem;
+}

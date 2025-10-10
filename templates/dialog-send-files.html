@@ -1,0 +1,42 @@
+<div id="DialogSendFiles">
+    <div class="ngdialog-message">
+        <form>
+            <table>
+                <thead>
+                    <tr>
+                        <td class="ColName">File Name:</td>
+                        <td class="ColWarn">&nbsp;</td>
+                        <td class="ColDevName">Name on Calculator:</td>
+                        <td class="ColLocation">Location:</td>
+                        <td class="ColDelete">&nbsp;</td>
+                        <td class="ColScrollbar">&nbsp;</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="file in ngDialogData.files">
+                        <td class="ColName" title="{{file.dataTypeLabel}}">{{file.fileName}}</td>
+                        <td class="ColWarn">&nbsp;</td>
+                        <td class="ColDevName">
+                            <select ng-model="file.newName" ng-change="change(file)">
+                                <option ng-selected="{{filenameOption === file.newName}}" ng-repeat="filenameOption in file.filenameOptions" value="{{filenameOption}}">{{filenameOption | fixGlyphs}}</option>
+                            </select>
+                        </td>
+                        <td class="ColLocation">
+                            <select ng-model="file.memType" ng-options="memTypeOption for memTypeOption in file.memTypeOptions">
+                            </select>
+                        </td>
+                        <td class="ColDelete" ng-click="removeArrayIndex(ngDialogData.files, $index)" ng-include="'images/icon_close.svg'" ng-show="ngDialogData.files.length > 1"></td>
+                        <td class="ColScrollbar">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="options">
+                <input type="checkbox" id="checkbox_replace" ng-model="ngDialogData.settings.replace"><label for="checkbox_replace">Replace existing content with the same name</label>
+            </div>
+        </form>
+    </div>
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog('Cancel')">Cancel</button>
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Send')" autofocus>Send</button>
+    </div>
+</div>

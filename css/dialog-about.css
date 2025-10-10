@@ -1,0 +1,50 @@
+#DialogAbout {
+    color: #58585a;
+    letter-spacing: -0.01em;
+    font-weight: normal;
+    width: 35rem;
+}
+
+#DialogAbout .appIcon {
+    position: absolute;
+    left: 1.5625rem;
+    top: 1.5625rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+#DialogAbout .tiLogo {
+    position: absolute;
+    top: 2.5rem;
+    right: 1.5625rem;
+    width: 8.8125rem;
+}
+
+#DialogAbout .appName,
+#DialogAbout .version,
+#DialogAbout .copyright {
+    margin-left: 5.5625rem;
+}
+
+#DialogAbout .appName {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    color: #3a3a3c;
+}
+
+#DialogAbout .appName .trademark {
+    font-size: 0.5em;
+    vertical-align: super;
+}
+
+#DialogAbout .version {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #d1d2d4;
+}
+
+#DialogAbout .copyright {
+    padding-top: 2.5rem;
+    font-size: 0.8rem;
+}

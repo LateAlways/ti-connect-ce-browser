@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="toolbar_add_from_comp" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <style>
+        .icon_fill {fill:595959;}
+        .icon_filter {filter: url(#filter-1);}
+    </style>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.21 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Toolbar-Icons">
+        <g id="add-from-comp_p" class="icon_fill">
+            <path d="M7,10.532233 L7,20 L4,24 L28,24 L25,20 L25,8.00684547 C25,7.45078007 24.5550537,7 24.0066023,7 L11.9530484,7 L12.9530484,8 L24,8 L24,19 L8,19 L8,11.532233 L7,10.532233 L7,10.532233 L7,10.532233 Z M4,24 L4,24.5 C4,24.7761424 4.22226536,25 4.50127411,25 L27.4987259,25 C27.7755719,25 28,24.7680664 28,24.5 L28,24 L4,24 L4,24 Z M5,9.99959696 C5,10.5521043 4.55613518,11 4,11 C3.44771525,11 3,10.544596 3,9.99010539 L3,8.51708984 L3,2 L11.0024554,2 C11.553384,2 12,2.44386482 12,3 C12,3.55228475 11.545999,4 10.9921929,4 L6.21421351,4 L12.1923882,9.97817464 L10.7781746,11.3923882 L5,5.61421361 L5,9.99959696 L5,9.99959696 Z" id="Rectangle-31"></path>
+        </g>
+    </g>
+</svg>

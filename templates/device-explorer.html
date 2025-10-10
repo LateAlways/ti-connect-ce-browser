@@ -1,0 +1,50 @@
+<div id="DeviceExplorer" ng-class="{on:connect.isAnimationDisplayed}" class="opacate" ng-click="connect.clickDeviceExplorerArea()">
+    <div class="DeviceInfo" ng-class="{primary:connect.primary === connect.files}"><!--
+        --><span class="deviceIcon button" ng-include src="'images/toolbar_calc.svg'" ng-class="{active: connect.currentDevice}" ng-click="connect.openCalcInfo()"></span><!--
+        --><span class="DeviceType" ng-click="connect.openCalcInfo()">{{connect.currentDevice.name}}</span>
+        <span class="deviceOS" ng-show="connect.currentDevice.os" ng-click="connect.openCalcInfo()">OS {{connect.currentDevice.os}}</span><!--
+        --><!--
+        --><span class="DeviceMem" ng-show="connect.currentDevice.freeRAMAvailable || connect.currentDevice.freeFLASHAvailable"><!--
+            --><span class="DeviceArchive" ng-show="connect.currentDevice.freeFLASHAvailable"><span class="memLabel">Archive:</span> {{connect.currentDevice.freeFLASHAvailable | bytesToString}} available</span><!--
+            --><span class="Separator" ng-show="connect.currentDevice.freeRAMAvailable"></span><!--
+--><span class="DeviceRam" ng-show="connect.currentDevice.freeRAMAvailable"><span class="memLabel">RAM:</span> {{connect.currentDevice.freeRAMAvailable | bytesToString}} available</span><!--
+        --></span><!--
+    --></div>
+    <table>
+        <thead>
+            <tr>
+                <th class="Column ColIcon">&nbsp;</th>
+                <th class="Column ColName">
+                    <a href="" ng-click="predicate=='name' ? reverse=!reverse : reverse=false;predicate='name'; connect.sortFiles();">Name</a>
+                    <span class="sortIndicator" ng-show="predicate=='name'"><span ng-show="reverse">&#8593;</span><span ng-show="!reverse">&#8595;</span></span>
+                </th>
+                <th class="Column ColType">
+                    <a href="" ng-click="predicate=='type' ? reverse=!reverse : reverse=false;predicate='type'; connect.sortFiles();">Type</a>
+                    <span class="sortIndicator" ng-show="predicate=='type'"><span ng-show="reverse">&#8593;</span><span ng-show="!reverse">&#8595;</span></span>
+                </th>
+                <th class="Column ColSize">
+                    <a href="" ng-click="predicate=='bytes' ? reverse=!reverse : reverse=false;predicate='bytes'; connect.sortFiles();">Size</a>
+                    <span class="sortIndicator" ng-show="predicate=='bytes'"><span ng-show="reverse">&#8593;</span><span ng-show="!reverse">&#8595;</span></span>
+                </th>
+                <th class="Column ColLocation">
+                    <a href="" ng-click="predicate=='location' ? reverse=!reverse : reverse=false;predicate='location'; connect.sortFiles();">Location</a>
+                    <span class="sortIndicator" ng-show="predicate=='location'"><span ng-show="reverse">&#8593;</span><span ng-show="!reverse">&#8595;</span></span>
+                </th>
+                <th class="Column ColSpacer">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody droppable="true" ng-class="{primary:connect.primary === connect.files}">
+            <tr ng-repeat="file in connect.currentDevice.files" ng-click="connect.fileClick(file, $event)" ng-class="{selected:file.selected}">
+                <td class="Column ColIcon"><ng-include src="connect.getFileIcon(file.type)"></ng-include></td>
+                <td class="Column ColName">{{file.name | fixGlyphs}}</td>
+                <td class="Column ColType">{{connect.getFileType(file.type)}}</td>
+                <td class="Column ColSize">{{file.bytes | bytesToString}}</td>
+                <td class="Column ColLocation"><ng-include src="connect.getLockIcon(file)" class="ColIcon Lock" title="File cannot be deleted"></ng-include>{{file.location}}</td>
+                <td class="Column ColSpacer">&nbsp;</td>
+            </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+    <no-device id="HideExplorer" ng-hide="connect.currentDevice" ng-dblclick="connect.noDeviceDoubleClick($event)"></no-device>
+</div>

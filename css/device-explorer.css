@@ -1,0 +1,298 @@
+#DeviceExplorer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select:none;
+}
+
+#DeviceExplorer .DeviceInfo {
+    position: relative;
+    left: 0;
+    width: 39rem;
+    top: 0;
+    height: 0.5rem;
+    padding: 1.875rem 0;
+    white-space: nowrap;
+    color: black;
+    background-color: white;
+    border-top: 0.5rem solid transparent;
+}
+
+#DeviceExplorer .DeviceInfo.primary {
+    border-top-color: #98cdee;
+}
+
+#DeviceExplorer .DeviceType,
+#DeviceExplorer SPAN.deviceOS,
+#DeviceExplorer .DeviceMem {
+    position: absolute;
+    top: 38%;
+}
+
+#DeviceExplorer .DeviceMem .memLabel {
+    font-weight: bold;
+}
+
+#DeviceExplorer .DeviceType {
+    left: 4rem;
+    font-weight: 600;
+    transform: translateY(-50%);
+}
+
+#DeviceExplorer SPAN.deviceOS {
+    left: 4rem;
+    font-size: 0.8rem;
+    transform: translateY(50%);
+    color: #888;
+}
+
+#DeviceExplorer .DeviceMem {
+    margin-left: 6rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#DeviceExplorer .DeviceArchive, #DeviceExplorer .DeviceRam {
+    white-space: nowrap;
+}
+
+#DeviceExplorer .Separator {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-left: 1.5px solid black;
+}
+
+#DeviceExplorer TABLE {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#DeviceExplorer TABLE TR {
+    height: 2.3rem;
+}
+
+#DeviceExplorer TABLE TD, #DeviceExplorer TABLE TH {
+    vertical-align: middle;
+}
+
+#DeviceExplorer THEAD {
+}
+
+#DeviceExplorer THEAD TR {
+    background-color: #dddedf;
+}
+
+#DeviceExplorer TBODY {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 7.1rem;
+    width: 100%;
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-image: url('../images/file_list_background.png');
+    background-position-y: 0;
+    background-size: auto 4.6rem;
+}
+
+#DeviceExplorer .Column {
+    /*Causing problems when selecting; rows remained #fff (default color in TBODY TR) when they should be blue*/
+    /*position: relative;*/
+}
+
+#DeviceExplorer .ColIcon {
+    min-width: 3.5rem;
+    width: 5rem;
+}
+
+#DeviceExplorer .ColName {
+    min-width: 6rem;
+    width: 7rem;
+}
+
+#DeviceExplorer .ColType {
+    min-width: 14rem;
+    width: 14rem;
+}
+
+#DeviceExplorer .ColSize {
+    min-width: 5rem;
+    width: 5rem;
+}
+
+#DeviceExplorer .ColLocation {
+    min-width: 7rem;
+    width: 7rem;
+}
+
+#DeviceExplorer .ColSpacer {
+    min-width: 1px;
+    width: 100%;
+}
+
+#DeviceExplorer .ColIcon SVG {
+    /*Since Column style is not used anymore, icons were displayed improperly*/
+    /*position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);*/
+    width: 1.5rem;
+    display: block;
+    margin: auto;
+}
+
+#DeviceExplorer .Lock SVG {
+    display: inline-block;
+}
+
+#DeviceExplorer TBODY TR {
+    cursor: pointer;
+    color: #4a4a4a;
+    background-color: #fff;
+}
+
+#DeviceExplorer TBODY TR:nth-child(even) {
+    background-color: #e5edef;
+}
+
+#DeviceExplorer TBODY TR.selected {
+    background-color: #adadad;
+    color: white;
+}
+
+#DeviceExplorer TBODY.primary TR.selected {
+    background-color: #3499dd;
+    color: white;
+}
+
+#DeviceExplorer TBODY TR.selected SVG .st1 {
+    fill: black;
+}
+
+#DeviceExplorer TBODY TR.selected SVG .st2 {
+    fill: white;
+}
+
+#DeviceExplorer TBODY TR.selected SVG .st3 {
+    fill: white;
+}
+
+#DeviceExplorer TH, #DeviceExplorer TD {
+    text-align: left;
+}
+
+#DeviceExplorer TH, #DeviceExplorer TD {
+    padding: 0.2rem;
+}
+
+#DeviceExplorer TH {
+    color: #4a4a4a;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-shadow: 0 0.5px white;
+}
+
+#DeviceExplorer TD {
+    
+}
+
+#DeviceExplorer THEAD A {
+    text-decoration: none;
+    color: #4a4a4a;
+}
+
+#DeviceExplorer .sortIndicator {
+    float:right;
+    margin-right: 0.5rem;
+}
+
+#DeviceExplorer no-device .noDevice {
+    top: -0.5rem;
+    right: auto;
+    width: 39rem;
+}
+
+/* begin styling for device info button */
+
+#DeviceExplorer .deviceIcon {
+    display: block;
+    position: absolute;
+    left: 0.6rem;
+}
+
+#DeviceExplorer .DeviceInfo SVG {
+    height: 2.5rem;
+    fill: black;
+}
+
+#DeviceExplorer SVG#toolbar_calc {
+    position: relative;
+    top: -1.1rem;
+    cursor: default;
+}
+
+/* disabled */
+#DeviceExplorer SPAN.button .icon_fill {
+    fill: #666;
+}
+/* enabled */
+#DeviceExplorer SPAN.button.active .icon_fill {
+    fill: #bfbfbf;
+}
+/* enabled hover */
+#DeviceExplorer SPAN.button.active.hover .icon_fill {
+    fill: #fff
+}
+/* enabled and pressed */
+#DeviceExplorer SPAN.button.active.ng-click-active .icon_fill {
+    fill: #666;
+}
+
+/* toggle button toggled */
+#DeviceExplorer SPAN.button.active.toggled .icon_fill {
+    fill: #8cc63e;/*todo*/
+}
+/* toggle button toggled and hovered */
+#DeviceExplorer SPAN.button.active.toggled.hover .icon_fill {
+    fill: #9cd64e;/*todo*/
+}
+/* toggle button toggled and pressed */
+#DeviceExplorer SPAN.button.active.toggled.ng-click-active .icon_fill {
+    fill: #5c960e;/*todo*/
+}
+/* for the calc info text */
+#DeviceExplorer SPAN.button.active {
+    cursor: pointer;
+}f
+
+/* CSS Class-based when showing and hidding animations */
+/*
+.opacate {
+  transition:0.5s linear all;
+}
+
+.opacate.on-add {
+  opacity: 1;
+}
+.opacate.on {
+  opacity: 0.25;
+}
+*/
+/* Prevent the text contents of draggable elements from being selectable. */
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}

@@ -1,0 +1,37 @@
+<div id="ToolBar">
+    
+    <div id="ToolbarButtons"><!--
+        --><div class="separator"></div><!--
+        --><toolbar-device-explorer class="toolbarDeviceExplorer" ng-show="connect.showToolbarDeviceExplorer()"></toolbar-device-explorer><!--
+        --><toolbar-screen-capture class="toolbarScreenCapture" ng-show="connect.showToolbarScreenCapture()"></toolbar-screen-capture><!--
+        --><span class="button" 
+                 ng-include 
+                 src="'images/toolbar_delete.svg'" 
+                 ng-click="connect.deleteSelection()"
+                 ng-class="{active: connect.canDeleteSelection(), hover: hover}" 
+                 ng-mouseenter="hover=true" 
+                 ng-mouseleave="hover=false" 
+                 title="Delete selected item(s)"></span><!--
+        --><span class="button input"
+                 ng-class="{active: connect.canSelectAll(), hover: hover2, toggled: connect.areSelectedAll()}"
+                 ng-mouseenter="hover2=true"
+                 ng-mouseleave="hover2=false"  
+                 title="Select All or None items in the current view" ><!--
+            --><input id="SelectAllCheckbox"
+                     type="checkbox" 
+                     ng-model="model.selectedAll"
+                     ng-change="connect.selectAll()"
+                     ng-checked="connect.areSelectedAll() && connect.canSelectAll()"
+                     ng-disabled="!connect.canSelectAll()"><label for="SelectAllCheckbox">select all</label><!--
+        --></span><!--
+        --><span class="separator"></span><!--
+        --><span class="button" ng-include src="'images/menu.svg'" ng-class="{active: connect.currentDevice || model.screens.length, hover: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" ng-click="connect.toggleSettingsMenu()" title="Menu"></span><!--
+    --></div>
+    <div class="settingsMenu fade-in-out" ng-show="connect.showSettingsMenu">
+        <div class="menuItem" ng-class="{active:connect.currentDevice}" ng-click="connect.openCalcInfo()">Calculator Information</div>
+        <div class="menuItem" ng-class="{active: connect.canSend(), hover: hover}" ng-click="connect.sendOSToCalculator()">Send OS to Calculator</div>
+        <div class="menuItem active" ng-click="connect.openAbout()">About TI Connect CE App</div>
+        <div class="menuItem active" ng-click="connect.openAnalytics()">Product Improvements...</div>
+    </div>
+    <div class="dismissSettingsMenu" ng-show="connect.showSettingsMenu" ng-click="connect.toggleSettingsMenu()"></div>
+</div>

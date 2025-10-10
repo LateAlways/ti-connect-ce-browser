@@ -1,0 +1,42 @@
+<!--    --><span class="button" 
+ng-include 
+src="'images/toolbar_capture.svg'" 
+ng-click="connect.takeScreenCap()" 
+ng-class="{active: connect.canTakeScreenCap(), hover: hover}" 
+ng-mouseenter="hover=true" 
+ng-mouseleave="hover=false" 
+title="Take a screen capture of this calculator"></span><!--
+--><span class="button" 
+ng-include 
+src="'images/toolbar_slide_show.svg'" 
+ng-click="connect.screenZoomStart()"
+ng-class="{active: connect.canSelectAllScreens(), hover: hover}" 
+ng-mouseenter="hover=true" 
+ng-mouseleave="hover=false" 
+title="Slide show of screen capture(s)"></span><!--
+--><span class="button" 
+ng-include 
+src="'images/toolbar_border.svg'" 
+ng-click="connect.toggleScreenBorders()"
+ng-class="{active: connect.canSetScreenBorder(), hover: hover, toggled: connect.screenBorders}" 
+ng-mouseenter="hover=true" 
+ng-mouseleave="hover=false" 
+title="Toggle screen border on/off for selected screen capture(s)"></span><!--
+--><span class="separator"></span><!--
+--><span class="button" 
+ng-include 
+src="'images/toolbar_save.svg'" 
+ng-click="connect.saveScreens()"
+ng-class="{active: connect.canSaveScreens(), hover: hover}" 
+ng-mouseenter="hover=true" 
+ng-mouseleave="hover=false" 
+title="Save selected screen capture(s) to the file system"></span><!--
+--><span class="button" 
+ng-include 
+src="'images/toolbar_copy.svg'" 
+ng-click="connect.copySelection()"
+ng-class="{active: connect.canCopySelection(), hover: hover}" 
+ng-mouseenter="hover=true" 
+ng-mouseleave="hover=false" 
+title="Copy selected screen capture(s) to the clipboard"></span><!--
+-->

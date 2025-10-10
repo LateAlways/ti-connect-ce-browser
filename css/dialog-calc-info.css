@@ -1,0 +1,25 @@
+#DialogCalcInfo {
+    
+}
+
+#DialogCalcInfo .calcInfoFields {
+    white-space: nowrap;
+    float: right;
+    line-height: 2rem;
+    letter-spacing: -0.01rem;
+}
+
+#DialogCalcInfo .calcInfoLabel {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+#DialogCalcInfo .calcInfoValue {
+    color: #888;
+}
+
+#DialogCalcInfo .calcImage {
+    float:left;
+    width: 7.1875rem;
+    margin-right: 1.5625rem;
+}

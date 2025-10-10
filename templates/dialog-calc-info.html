@@ -1,0 +1,34 @@
+<div id="DialogCalcInfo">
+    <div class="ngdialog-message">
+        <img class="calcImage" src="images/TI-84 Plus CE @2x.png">
+        <div class="calcInfoFields">
+            <div class="calcInfoField">
+                <span class="calcInfoLabel">Calculator Type:</span> <span class="calcInfoValue">{{ngDialogData.device.name}}</span>
+            </div>
+            <div class="calcInfoField">
+                <span class="calcInfoLabel">Product ID:</span> <span class="calcInfoValue">{{ngDialogData.device.productId}}</span>
+            </div>
+            <div class="calcInfoField">
+                <span class="calcInfoLabel">OS Version:</span> <span class="calcInfoValue">{{ngDialogData.device.os}}</span>
+            </div>
+            <div class="calcInfoField">
+                <span class="calcInfoLabel">RAM:</span> <span class="calcInfoValue">{{ngDialogData.device.totalRAMAvailable | bytesToString}} ({{ngDialogData.device.freeRAMAvailable | bytesToString}} available)</span>
+            </div>
+            <div class="calcInfoField">
+                <span class="calcInfoLabel">Archive:</span> <span class="calcInfoValue">{{ngDialogData.device.totalFLASHAvailable | bytesToString}} ({{ngDialogData.device.freeFLASHAvailable | bytesToString}} available)</span>
+            </div>
+            <div class="calcInfoField">
+                <span class="calcInfoLabel">Language:</span> <span class="calcInfoValue">{{ngDialogData.device.language}}</span>
+            </div>
+            <div class="calcInfoField">
+                <span class="calcInfoLabel">ROM Version:</span> <span class="calcInfoValue">{{ngDialogData.device.romVersion}}</span>
+            </div>
+            <div class="calcInfoField">
+                <span class="calcInfoLabel">Hardware Version:</span> <span class="calcInfoValue">{{ngDialogData.device.hwVersion}}</span>
+            </div>    
+        </div>
+    </div>
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog()">Close</button>
+    </div>
+</div>

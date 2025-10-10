@@ -1,0 +1,27 @@
+<!--
+        --><span class="button" 
+                 ng-include 
+                 src="'images/toolbar_refresh.svg'" 
+                 ng-click="connect.refresh()"
+                 ng-class="{active: connect.canRefresh(), hover: hover}" 
+                 ng-mouseenter="hover=true" 
+                 ng-mouseleave="hover=false" 
+                 title="Refresh the view of the calculator's content"></span><!--
+        --><div class="separator"></div><!--
+        --><span class="button" 
+                 ng-include 
+                 src="'images/toolbar_add_from_comp.svg'" 
+                 ng-click="connect.sendFiles()" 
+                 ng-class="{active: connect.canSend(), hover: hover}" 
+                 ng-mouseenter="hover=true" 
+                 ng-mouseleave="hover=false" 
+                 title="Add content from computer to connected calculator"></span><!--
+        --><span class="button" 
+                 ng-include 
+                 src="'images/toolbar_send_to_comp.svg'" 
+                 ng-click="connect.collectFiles()"
+                 ng-class="{active: connect.canCollect(), hover: hover}" 
+                 ng-mouseenter="hover=true" 
+                 ng-mouseleave="hover=false" 
+                 title="Send selected content to computer"></span><!--
+        --><div class="separator"></div>

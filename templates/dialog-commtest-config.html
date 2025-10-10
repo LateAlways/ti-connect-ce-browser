@@ -1,0 +1,28 @@
+<div id="DialogCommTestConfig">
+    <div class="ngdialog-message">
+        <form>
+            <table>
+                <tr>
+                    <td>Iterations:</td>
+                    <td><input ng-model="ngDialogData.config.iterations" type="number" min="1" max="1000" value="10"></td>
+                </tr>
+                <tr>
+                    <td>Size:</td>
+                    <td><input ng-model="ngDialogData.config.size" type="number" min="1" max="64000" value="100"></td>
+                </tr>
+                <tr>
+                    <td>Location:</td>
+                    <td>
+                        <select ng-model="ngDialogData.config.mem">
+                            <option value="RAM">RAM</option>
+                            <option value="Archive">Archive</option>
+                        </select>
+                    </td>
+                </tr>
+        </form>
+    </div>
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog('Cancel')">Cancel</button>
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Start')" autofocus>Start</button>
+    </div>
+</div>

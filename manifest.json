@@ -1,0 +1,35 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "manifest_version": 2,
+    "name": "TI Connect CE App for Chrome OS",
+    "short_name": "TI Connect CE App",
+    "version": "0.1.0.9",
+    "version_name": "0.1.0.9",
+    "description": "Manage USB connected Texas Instruments TI‑84 Plus CE graphing calculators",
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    "permissions": [
+        {"fileSystem": ["write", "retainEntries", "directory"]}, 
+        "usb",
+        {"usbDevices": [{"vendorId": 1105, "productId": 57352 }]},
+        "https://www.google-analytics.com/",
+		"storage"
+    ],
+    "app": {
+        "background": {
+            "scripts": ["js/background.js"]
+        }
+    },
+    "file_handlers": {
+        "tic_handler": {
+            "extensions": [
+                "8xv"
+            ]
+        }
+    },
+    "minimum_chrome_version": "41"
+}

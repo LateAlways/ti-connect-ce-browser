@@ -1,0 +1,260 @@
+    #ToolBar {
+    background-color: #333;
+    color: #888;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    /* box-shadow: 0 0.25rem 0.5rem 0 rgba(0,0,0,0.5);*/
+    font-weight: normal;
+    border-bottom: 1px solid #1a1a1a;
+    -webkit-user-select: none;
+    user-select:none;
+}
+
+#ToolbarButtons {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-top: 0.2rem;
+    margin-left: 13rem;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+#ToolbarButtons SPAN.button {
+    display: inline-block;
+}
+
+#ToolbarButtons SPAN.button.input {
+    position: relative;
+    margin-right: 1.25rem;
+    transform: translateY(-50%);
+}
+#ToolbarButtons SPAN.button.input.active label {
+    cursor: pointer;
+}
+#ToolbarButtons SPAN.button.input INPUT[type=checkbox] {
+    border-radius: 0.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0 0.5rem -0.25rem 0;
+    outline: none;
+    background: none;
+    border: 1px solid #666;
+}
+#ToolbarButtons SPAN.button.input.active,  #ToolbarButtons SPAN.button.input.active INPUT[type=checkbox] {
+   color: #bfbfbf;
+   border-color: #bfbfbf;
+   cursor: pointer;
+}
+#ToolbarButtons SPAN.button.input.active.hover,  #ToolbarButtons SPAN.button.input.active.hover INPUT[type=checkbox] {
+    color: #fff;
+   border-color: #fff;
+}
+
+#ToolbarButtons SPAN.button.input.active.toggled,  #ToolbarButtons SPAN.button.input.active.toggled INPUT[type=checkbox] {
+   color: #5c960e;
+   border-color: #5c960e;
+}
+#ToolbarButtons SPAN.button.input.active.hover.toggled,  #ToolbarButtons SPAN.button.input.active.hover.toggled INPUT[type=checkbox] {
+   color: #8cc63e;
+   border-color: #8cc63e;
+}
+#ToolbarButtons SPAN.button.input.active.hover.toggled INPUT[type=checkbox] {
+ background-image: url('../images/icon_checkmark_green_hover.svg');
+}
+#ToolbarButtons SPAN.button.input INPUT[type=checkbox]:checked {
+    background-image: url('../images/icon_checkmark_green.svg');
+    border-color: #5c960e;
+}
+/*
+#ToolbarButtons SPAN.button.input INPUT[type=checkbox]:checked + SPAN {
+    color: #5c960e;
+}
+#ToolbarButtons SPAN.button.input.active.hover INPUT[type=checkbox]:checked + SPAN {
+    color: #fff;
+}
+#ToolbarButtons SPAN.button.input.active.hover.toggled INPUT[type=checkbox]:checked + SPAN {
+    color: #8cc63e;
+}
+#ToolbarButtons SPAN.button.input.active.hover.toggled INPUT[type=checkbox]:checked {
+    border-color: #8cc63e;
+}
+*/
+
+#ToolbarButtons SVG {
+    height: 2rem;
+}
+
+#ToolbarButtons SVG#toolbar_calc {
+    position: relative;
+    top: -0.1rem;
+    cursor: default;
+}
+
+/* disabled */
+#ToolbarButtons SPAN.button .icon_fill {
+    fill: #666;
+}
+/* enabled */
+#ToolbarButtons SPAN.button.active .icon_fill {
+    fill: #bfbfbf;
+}
+/* enabled hover */
+#ToolbarButtons SPAN.button.active.hover .icon_fill {
+    fill: #fff
+}
+/* enabled and pressed */
+#ToolbarButtons SPAN.button.active.ng-click-active .icon_fill {
+    fill: #666;
+}
+
+/* toggle button toggled */
+#ToolbarButtons SPAN.button.active.toggled .icon_fill {
+    fill: #8cc63e;/*todo*/
+}
+/* toggle button toggled and hovered */
+#ToolbarButtons SPAN.button.active.toggled.hover .icon_fill {
+    fill: #9cd64e;/*todo*/
+}
+/* toggle button toggled and pressed */
+#ToolbarButtons SPAN.button.active.toggled.ng-click-active .icon_fill {
+    fill: #5c960e;/*todo*/
+}
+
+/* for the calc info text */
+#ToolbarButtons SPAN.button.active {
+    color: #bfbfbf;
+    cursor: pointer;
+}
+
+#ToolbarButtons .deviceInfo {
+    text-align: left;
+    font-size: 0.7rem;    
+    display: inline-block;
+    position: relative;
+    top: -0.3rem;
+    margin-right: 1.25rem;
+}
+
+#ToolbarButtons .separator {
+    display: inline-block;
+    width: 0.0625rem;
+    min-width: 1px;
+    height: 2rem;
+    background-color: #666;
+    margin-right: 1.25rem;
+}
+
+/* margins */
+#ToolbarButtons SVG, 
+#ToolbarButtons .separator, 
+#ToolbarButtons .deviceInfo {
+    margin-right: 1.25rem;
+}
+
+#ToolbarButtons SVG#toolbar_calc {
+    margin-left: 0.75rem;
+    margin-right: 0.625rem;
+}
+
+#ToolbarButtons SVG#menu {
+    margin-right: 0;
+}
+
+#ToolBar .settingsMenu {
+    position: absolute;
+    right: 0.5rem;
+    top: 3.2rem;
+    height: auto;
+    width: auto;
+    background-color: #ffffff;
+    z-index: 9999;
+    box-shadow: 0rem 0.3571rem 0.7143rem rgba(0,0,0,0.5);
+    font-family: "Helvetica Neue";
+    font-size: 1.125em;
+    color: #333333;
+    border-radius: 0.3571rem;
+}
+
+#ToolBar .settingsMenu:after {
+    content: "";
+    position: absolute;
+    top: -0.7rem;
+    right: 0.75rem;
+    width: 0;
+    height: 0;
+    border-left: 0.75rem solid transparent;
+	border-right: 0.75rem solid transparent;
+	border-bottom: 0.75rem solid white;
+    z-index: 9999;
+}
+
+#ToolBar .settingsMenu .menuItem {
+    border-bottom: 1px solid #cccccc;
+    color: #666;
+    cursor: pointer;
+    height: 2.857rem;
+    padding: 0 1.143rem 0 1.143rem;
+    display: flex;
+    align-items: center;
+}
+
+#ToolBar .settingsMenu .menuItem:first-child {
+    border-top-right-radius:0.3571rem;
+    border-top-left-radius:0.3571rem;
+}
+
+#ToolBar .settingsMenu .menuItem:last-child {
+    border-bottom-right-radius:0.3571rem;
+    border-bottom-left-radius:0.3571rem;
+    border-bottom: 0px;
+}
+
+#ToolBar .settingsMenu .menuItem.active {
+    color: black;
+}
+
+#ToolBar .settingsMenu .menuItem.active:hover {
+    background-color: #27a9e1;
+    color: white;
+}
+
+
+#ToolBar .settingsMenu .menuItem.active:last {
+    border-bottom: 0 solid black;
+}
+
+#ToolBar .dismissSettingsMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9990;
+}
+#ToolBar .fade-in-out {
+  transition: 0.25s linear all;  
+  opacity: 1;
+}
+
+#ToolBar .fade-in-out.ng-hide {
+  opacity: 0;
+}
+#ToolBar .toolbarDeviceExplorer:not(.ng-hide), 
+#ToolBar .toolbarScreenCapture:not(.ng-hide) {
+    animation: slidein 0.5s;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

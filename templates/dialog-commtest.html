@@ -1,0 +1,11 @@
+<div id="DialogCommTest">
+    <div class="ngdialog-message">
+        <div>Iteration: {{ngDialogData.status.iteration}}</div>
+        <div>{{ngDialogData.status.message}}</div>
+        <progress value="{{ngDialogData.status.percentage}}" max="100">{{ngDialogData.status.percentage}}%</progress>
+    </div>
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Cancel')" ng-show="ngDialogData.status.percentage < 100" autofocus>Cancel</button>
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Close')" ng-show="ngDialogData.status.percentage === 100" autofocus>Close</button>
+    </div>
+</div>

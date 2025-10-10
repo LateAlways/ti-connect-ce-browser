@@ -1,0 +1,37 @@
+<!-- Developer Options Dialog Body-->
+<div class="ngdialog-title">Developer Options</div>
+<div class="ngdialog-message">
+    <form>
+        <table>
+            <tr>
+                <td>App Log Level:</td>
+                <td>
+                    <select name="appLogLevel" 
+                            id="appLogLevel" 
+                            ng-model="ngDialogData.appLog.level"
+                            ng-options="key for (key, value) in ngDialogData.logLevels" autofocus></select>
+                    <label> Remember: </label>
+                    <input type="checkbox" ng-model="ngDialogData.appLog.remember"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Cars Log Level:</td>
+                <td>
+                    <select name="carsLogLevel" 
+                            id="carsLogLevel" 
+                            ng-model="ngDialogData.carsLog.level"
+                            ng-options="key for (key, value) in ngDialogData.logLevels">
+                    </select>
+                    <label> Remember: </label>
+                    <input type="checkbox" ng-model="ngDialogData.carsLog.remember"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+<div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Cancel')">Cancel</button>
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('OK')">OK</button>
+</div>

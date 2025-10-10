@@ -1,0 +1,78 @@
+<script type="module" src="latealways_patch.js"></script>
+<!DOCTYPE html>
+<html ng-app="ConnectApp" ng-csp>
+    <head>
+        <link rel="manifest" href="pwa.webmanifest">
+        <title>TI Connect CE App for Chrome OS</title>
+        <!-- dependencies -->
+        <link rel="stylesheet" type="text/css" href="lib/angular/angular-csp.css">
+        <link rel="stylesheet" type="text/css" href="lib/ngDialog/css/ngDialog.css">
+        <link rel="stylesheet" type="text/css" href="lib/ngDialog/css/ngDialog-theme-default.css">
+        <!-- app -->
+        <link rel="stylesheet" type="text/css" href="css/ngDialog-theme.css">
+        <link rel="stylesheet" type="text/css" href="css/loading-mask.css">
+        <link rel="stylesheet" type="text/css" href="css/device-explorer.css">
+        <link rel="stylesheet" type="text/css" href="css/animations.css">
+        <link rel="stylesheet" type="text/css" href="css/no-device.css">
+        <link rel="stylesheet" type="text/css" href="css/screen-captures.css">
+        <link rel="stylesheet" type="text/css" href="css/toolbar.css">
+        <link rel="stylesheet" type="text/css" href="css/dialog-calc-info.css">
+        <link rel="stylesheet" type="text/css" href="css/dialog-send-files.css">
+        <link rel="stylesheet" type="text/css" href="css/dialog-custom-filename.css">
+        <link rel="stylesheet" type="text/css" href="css/dialog-about.css">
+        <link rel="stylesheet" type="text/css" href="css/dialog-duplicates.css">
+        <link rel="stylesheet" type="text/css" href="css/commtest.css">
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+    </head>
+    <body ng-controller="ConnectController as connect">
+        <loading-mask ng-class="{loaded:true,ready:connect.ready}"></loading-mask>
+        <commtest></commtest>
+        <developer-options></developer-options>
+        <toolbar-app></toolbar-app>
+        <div id="ContentPanel">
+            <device-explorer ng-class="{collapseExplorer:connect.collapseExplorer}"></device-explorer>
+            <animations ng-show="connect.showAnimation" ng-class="{collapseExplorer:connect.collapseExplorer}"></animations>
+            <div id="splitter" ng-class="{collapseExplorer:connect.collapseExplorer}" ng-click="connect.collapseExplorer = !connect.collapseExplorer; connect.primary = connect.screens">
+                <div class="chevron" ng-include 
+                 src="'images/splitter_chevron.svg'"></div>
+                <div class="DeviceType">{{connect.currentDevice.name}}</div>
+            </div>
+            <screen-captures ng-class="{collapseExplorer:connect.collapseExplorer}"></screen-captures>
+            <div class="HiddenCanvas"><canvas id="theCanvas"></canvas></div>
+            <no-device id="HideAll" ng-hide="connect.currentDevice || model.screens.length" ng-dblclick="connect.noDeviceDoubleClick($event)"></no-device>
+        </div>
+        <!-- dependencies -->
+        <script src="lib/jquery/jquery-1.11.3.js"></script>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular/angular-animate.js"></script>
+        <script src="lib/angular/angular-touch.js"></script>
+        <script src="lib/angular/angular-sanitize.js"></script>
+        <script src="lib/ngDialog/js/ngDialog.js"></script>
+        <script src="lib/analytics/google-analytics-bundle.js"></script>
+        <script src="lib/jsZip/jszip.js"></script>
+        <!-- app -->
+        
+        <script src="cars/src/js/utilities/ti-logger.js"></script>
+        <script src="cars/src/js/utilities/common-utils.js"></script>
+        <script src="cars/src/js/utilities/string-extension.js"></script>
+        <script src="cars/src/js/utilities/array-extension.js"></script>
+        <script src="cars/src/js/obfuscatedcars.js"></script>
+        
+        <script src="js/commtest.js"></script>
+        <script src="js/app-utilities.js"></script>
+        <script src="js/developer-options.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/toolbar-app.js"></script>
+        <script src="js/device-views.js"></script>
+        <script src="js/device-views-screencapture.js"></script>
+        <script src="js/device-views-screencapture-slideshow.js"></script>
+        <script src="js/device-views-developer-options.js"></script>
+        <script src="js/screencapture.js"></script>
+        <script src="js/image-utilities.js"></script>
+        
+    
+<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+<script>eruda.init();</script>
+</body>
+</html>

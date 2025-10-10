@@ -1,0 +1,168 @@
+#Animations .animation {
+    display: block;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /*border: 2px solid blue;*/
+}
+
+#Animations .animation .arrow_icon {
+    width: 1.375rem;
+    height: 1.375rem;
+    vertical-align: middle;
+    /*border: 1px solid red;*/
+}
+
+#Animations .animation .files_icon {
+    width: 5.313rem;
+    height: 5.313rem;
+    vertical-align: middle;
+    /*border: 1px solid red;*/
+}
+
+#Animations .animation .delete_icon {
+    width: 5.313rem;
+    height: 5.313rem;
+    vertical-align: middle;
+    /*border: 1px solid red;*/
+}
+
+#Animations .animation .refresh_icon {
+    width: 4.375rem;
+    height: 4.375rem;
+    /*border: 1px solid red;*/
+}
+
+#Animations .animation .calculator_icon {
+    width: 5.625rem;
+    height: 5.625rem;
+    vertical-align: middle;
+    /*border: 1px solid red;*/
+}
+
+#Animations .animation .os_icon {
+    width: 1.375rem;
+    height: 1.375rem;
+    vertical-align: middle;
+    padding: 1rem 1rem 1rem 1rem; /*Using padding since icon does not have it*/
+}
+
+#Animations .animation .fail_icon {
+    width: 5.625rem;
+    height: 5.625rem;
+    vertical-align: middle;
+    /*border: 1px solid red;*/
+}
+
+.animation .capture_icon {
+    width: 5.375rem;
+    height: 5.375rem;
+}
+
+@-webkit-keyframes rotateRefresh {
+    0% {
+        -webkit-transform: rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);
+    }
+}
+
+.rotate {
+    width: 4.375rem;
+    height: 4.375rem;
+    -webkit-animation:rotateRefresh 2s linear infinite;
+}
+
+#Animations .animation .refresh_icon .clippath0{clip-path:url(#SVGID_2_);}
+#Animations .animation .refresh_icon .clippath1{clip-path:url(#SVGID_4_);fill:#28AAE1;}
+#Animations .animation .refresh_icon .clippath2{clip-path:url(#SVGID_6_);}
+#Animations .animation .refresh_icon .refresh_icon_fill{fill:url(#SVGID_9_);}
+#Animations .animation .refresh_icon .refresh_arrow_fill{fill:#28AAE1;}
+
+#Animations .animation .delete_icon .delete_icon_fill{fill-rule:evenodd;clip-rule:evenodd;fill:#4D4D4D;}
+#Animations .animation .delete_icon .calculator_icon_fill{fill:#4D4D4D;}
+#Animations .animation .os_icon .os_icon_fill{fill:#4D4D4D;}
+
+#Animations .animation .fail_icon .path0{fill:#4D4D4D;}
+#Animations .animation .fail_icon .path1{fill:#333333;}
+#Animations .animation .fail_icon .circle{fill:#EA2127;}
+#Animations .animation .fail_icon .clipPath0{clip-path:url(#SVGID_2_);}
+#Animations .animation .fail_icon .path3{fill:#FFFFFF;}
+
+#Animations .animation .iconsContainer {
+    padding-bottom: 2.5rem;
+}
+
+#Animations .animation .legend {
+    font-size: 112.5%;
+    padding-bottom: 0.9375rem;
+}
+
+#Animations .animation .progress {
+    font-size: 81.25%;
+    padding-bottom: 3.75rem;
+}
+
+#Animations .animation .cancelButton {
+    border: 0;
+    cursor: pointer;
+    margin: 0 0 0 .5rem;
+    padding: 0 0.75rem;
+    height: 1.875rem;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #585858;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+#Animations .animation .cancelButton:hover {
+    background-color: #808284;
+    background-image: none;
+    text-shadow: none;
+    color:black;
+}
+
+#Animations .animation .cancelButton:active {
+    background-color: #48494a;
+    color:black;
+}
+
+#Animations .animation .cancelButton:focus {
+    outline:0;
+}
+
+#Animations .RefreshPlaceHolder {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 40.5%;
+    transform: translateX(-50%) translateY(-40.5%);
+    opacity: 1;
+}
+
+#Animations .RefreshPlaceHolder SVG {
+    width: 4.375rem;
+    padding: 1.8rem;
+    margin: 1rem;
+    border: 0.3rem dashed #bbb;
+    border-radius: 1rem;
+}
+
+#Animations .RefreshPlaceHolder .refresh_icon .clippath0{clip-path:url(#SVGID_2_);fill:#bbb;}
+#Animations .RefreshPlaceHolder .refresh_icon .clippath1{clip-path:url(#SVGID_4_);fill:#bbb;}
+#Animations .RefreshPlaceHolder .refresh_icon .clippath2{clip-path:url(#SVGID_6_);fill:#bbb;}
+#Animations .RefreshPlaceHolder .refresh_icon .refresh_icon_fill{fill:url(#SVGID_9_);fill:#bbb;}
+#Animations .RefreshPlaceHolder .refresh_icon .refresh_arrow_fill{fill:#bbb;}
+
+#Animations .RefreshPlaceHolder .button.hover .refresh_icon_fill, #Animations .RefreshPlaceHolder .button.hover .clippath1 {
+    fill: #666;
+}
+#Animations .RefreshPlaceHolder .button.ng-click-active .refresh_icon_fill, #Animations .RefreshPlaceHolder .button.ng-click-active .clippath1 {
+    fill: #000;
+}

@@ -1,0 +1,20 @@
+<div id="DialogSendFiles">
+    <div class="ngdialog-message">
+        <form>
+            <p>OS File:</p>
+            <hr />
+            <p>{{ngDialogData.file.fileName}}.{{ngDialogData.file.ext}}</p>
+            <hr />
+            <p>WARNING: Sending the OS will clear the memory on the destination calculator(s), <br /> 
+                but archive items (apps, background images, etc.) will not be erased. <br/>
+                Do you want to send the OS now?</p>
+            <div class="options">
+                <input type="checkbox" id="checkbox_replace" ng-model="ngDialogData.settings.replace"><label for="checkbox_replace">Replace existing content with the same name</label>
+            </div>
+        </form>
+    </div>
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog('Cancel')">Cancel</button>
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Send')" autofocus>Send</button>
+    </div>
+</div>

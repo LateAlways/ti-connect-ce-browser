@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 220 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12002) - http://www.bohemiancoding.com/sketch -->
+    <title>no hh connected</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="2.67458546%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#919396" offset="0%"></stop>
+            <stop stop-color="#6D6F71" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#919396" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#919396" stop-opacity="0.15" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="2.67458546%" x2="50%" y2="99.9146728%" id="linearGradient-3">
+            <stop stop-color="#919396" offset="0%"></stop>
+            <stop stop-color="#6D6F71" offset="99.9561543%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Content-Panel-Overlay-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="no-hh-connected" sketch:type="MSArtboardGroup">
+            <path d="M63,49 L71.0073829,49 C78.1950077,49 83.5753791,54.8076287 83.0246584,61.9732676 L83.018799,62.0495061 C82.4681322,69.214444 87.8389855,75.0227737 95.0348083,75.0227737 C95.0348083,75.0227737 97.5258066,75.0227737 97.5258066,75.0227737 C97.5258066,75.0227737 114.017061,75.0227737 114.017061,75.0227737" id="Path-2" stroke="url(#linearGradient-1)" stroke-width="2" sketch:type="MSShapeGroup"></path>
+            <path d="M36,82 L25.0000255,82 C22.7964248,82 21,80.2107384 21,78.0035723 L21,76 L19.9981014,76 C19.2571114,76 18.6103291,75.5997381 18.2653372,75 L18,75 L18,72 L21,72 L21,72 L21,70 L18,70 L18,66 L21,66 L21,64 L18,64 L18,60 L21,60 L21,58 L18,58 L18,54 L21,54 L21,52 L18,52 L18,49 L18.2653372,49 C18.6103291,48.4002619 19.2571114,48 19.9981014,48 L21,48 L21,42 L18,42 L18,26 L21,26 L21,23.9964277 C21,21.7886753 22.7908724,20 25.0000255,20 L36,20 L36,20 L16.0000255,20 C13.7908724,20 12,21.7886753 12,23.9964277 L12,78.0035723 C12,80.2107384 13.7964248,82 16.0000255,82 L36,82 L36,82 Z" id="Rectangle-3" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup"></path>
+            <path d="M25,82 L14.0000255,82 C11.7964248,82 10,80.2107384 10,78.0035723 L10,76 L8.99810135,76 C8.25711142,76 7.61032911,75.5997381 7.26533722,75 L7,75 L7,72 L10,72 L10,72 L10,70 L7,70 L7,66 L10,66 L10,64 L7,64 L7,60 L10,60 L10,58 L7,58 L7,54 L10,54 L10,52 L7,52 L7,49 L7.26533722,49 C7.61032911,48.4002619 8.25711142,48 8.99810135,48 L10,48 L10,42 L7,42 L7,26 L10,26 L10,23.9964277 C10,21.7886753 11.7908724,20 14.0000255,20 L25,20 L25,20 L5.00002553,20 C2.79087243,20 1,21.7886753 1,23.9964277 L1,78.0035723 C1,80.2107384 2.79642476,82 5.00002553,82 L25,82 L25,82 Z" id="Rectangle-4" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-8" opacity="0.5" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup" x="18" y="26" width="3" height="16"></rect>
+            <rect id="Rectangle-9" opacity="0.5" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup" x="7" y="26" width="3" height="16"></rect>
+            <rect id="Rectangle-117" fill="#FFFFFF" sketch:type="MSShapeGroup" x="114" y="5" width="90" height="60"></rect>
+            <path d="M112.997324,0 C110.789663,0 109,1.79057591 109,3.99501486 L109,71 L209,71 L209,3.99501486 C209,1.78862908 207.20047,0 205.002676,0 L112.997324,0 Z M114,5 L114,65 L204,65 L204,5 L114,5 Z M99,79 L99,80.5 C99,81.3284271 99.6748606,82 100.495522,82 L217.504478,82 C218.330432,82 219,81.3342028 219,80.5 L219,79 L99,79 Z M109,72 L99,78 L219,78 L209,72 L109,72 Z M159,4 C159.552285,4 160,3.55228475 160,3 C160,2.44771525 159.552285,2 159,2 C158.447715,2 158,2.44771525 158,3 C158,3.55228475 158.447715,4 159,4 Z" id="Rectangle-116" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-11" opacity="0.5" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup" x="114" y="5" width="90" height="60"></rect>
+            <g id="Rectangle-1-+-Rectangle-8" sketch:type="MSLayerGroup" transform="translate(23.000000, 20.000000)">
+                <path d="M4.00002553,0 C1.79087243,0 0,1.78867531 0,3.99642766 L0,58.0035723 C0,60.2107384 1.79642476,62 4.00002553,62 L35.9999745,62 C38.2091276,62 40,60.2113247 40,58.0035723 L40,3.99642766 C40,1.78926161 38.2035752,0 35.9999745,0 L4.00002553,0 Z M6,34 L6,38 L14,38 L14,34 L6,34 Z M6,40 L6,44 L14,44 L14,40 L6,40 Z M6,46 L6,50 L14,50 L14,46 L6,46 Z M16,28 L16,32 L24,32 L24,28 L16,28 Z M16,34 L16,38 L24,38 L24,34 L16,34 Z M16,40 L16,44 L24,44 L24,40 L16,40 Z M16,46 L16,50 L24,50 L24,46 L16,46 Z M16,52 L16,56 L24,56 L24,52 L16,52 Z M26,40 L26,44 L34,44 L34,40 L26,40 Z M26,46 L26,50 L34,50 L34,46 L26,46 Z M27.9981014,28 C26.8945804,28 26,28.8874333 26,29.999615 L26,36.000385 C26,37.1047419 26.8867064,38 27.9981014,38 L32.0018986,38 C33.1054196,38 34,37.1125667 34,36.000385 L34,29.999615 C34,28.8952581 33.1132936,28 32.0018986,28 L27.9981014,28 Z M6,6 L6,22 L34,22 L34,6 L6,6 Z M7.99810135,28 C6.89458045,28 6,28.8877296 6,30 L6,32 L14,32 L14,28 L7.99810135,28 Z M6,52 L6,54 C6,55.1045695 6.88670635,56 7.99810135,56 L14,56 L14,52 L6,52 Z M26,52 L26,56 L32.0018986,56 C33.1054196,56 34,55.1122704 34,54 L34,52 L26,52 Z" id="Rectangle-1" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup"></path>
+                <rect id="Rectangle-7" opacity="0.5" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup" x="6" y="6" width="28" height="16"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

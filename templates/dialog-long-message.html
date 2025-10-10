@@ -1,0 +1,14 @@
+<div id="DialogLongMessage" style='width:40vw'>
+    <div class="ngdialog-long-message">
+        <img class="appIcon" ng-src="{{ngDialogData.appIcon}}" ng-show="ngDialogData.appIcon">
+        <div class="appName" ng-show="ngDialogData.title">{{ngDialogData.title}}</div>
+        <div class="version" ng-show="ngDialogData.desc"><h1>{{ngDialogData.desc}}</h1></div>
+        <div class="version" ng-show="ngDialogData.paragraph1">{{ngDialogData.paragraph1}}</div>
+        <br/>
+        <div class="version" ng-show="ngDialogData.paragraph2">{{ngDialogData.paragraph2}}</div>
+    </div>
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog(ngDialogData.close)">{{ngDialogData.close}}</button>
+        <button type="button" autofocus class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog(ngDialogData.confirm)" ng-show="ngDialogData.confirm">{{ngDialogData.confirm}}</button>
+    </div>
+</div>

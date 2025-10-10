@@ -1,0 +1,66 @@
+<div id="Animations">
+        <div class="RefreshPlaceHolder" ng-show="connect.animations.pressToRefresh.value">
+            <span class="button" ng-include src="connect.animations.pressToRefresh.iconMiddle" ng-click="connect.refresh();" ng-class="{active: connect.currentDevice, hover: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title="Press to refresh calculator contents."></span>
+            <div>Press to refresh calculator contents.</div>
+        </div> 
+        <div class="animation" ng-show="connect.animations.refresh.value" >
+            <div class="rotate">
+                <span class="" ng-include src="connect.animations.refresh.iconLeft" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.refresh.iconMiddle" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="button" ng-include src="connect.animations.refresh.iconRight" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+            </div>
+        </div>
+        
+        <div class="animation" ng-show="connect.animations.deleteFiles.value" >
+            <div class="iconsContainer">
+                <span class="" ng-include src="connect.animations.deleteFiles.iconLeft" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.deleteFiles.iconMiddle" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.deleteFiles.iconRight" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+            </div>
+            <div class="legend">{{connect.animations.deleteFiles.legend}}</div>
+            <div class="progress">{{connect.animations.deleteFiles.fileName | fixGlyphs}}</div>
+            <button type="button" class="cancelButton" ng-click="connect.cancel()">{{"cancel"}}</button>
+        </div>
+        
+        <div class="animation" ng-show="connect.animations.sendFilesToDevice.value" >
+            <div class="iconsContainer">
+                <span class="" ng-include src="connect.animations.sendFilesToDevice.iconLeft" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.sendFilesToDevice.iconMiddle" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.sendFilesToDevice.iconRight" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+            </div>
+            <div class="legend">{{connect.animations.sendFilesToDevice.legend}}</div>
+            <div class="progress">{{connect.animations.sendFilesToDevice.fileName | fixGlyphs}}</div>
+            <button type="button" class="cancelButton" ng-click="connect.cancel()">{{"cancel"}}</button>
+        </div>
+            
+        <div class="animation" ng-show="connect.animations.sendFilesToComp.value" >
+            <div class="iconsContainer">
+                <span class="" ng-include src="connect.animations.sendFilesToComp.iconLeft" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.sendFilesToComp.iconMiddle" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.sendFilesToComp.iconRight" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+            </div>
+            <div class="legend">{{connect.animations.sendFilesToComp.legend}}</div>
+            <div class="progress">{{connect.animations.sendFilesToComp.fileName | fixGlyphs}}</div>
+            <button type="button" class="cancelButton" ng-click="connect.cancel()">{{"cancel"}}</button>
+        </div> 
+
+        <div class="animation" ng-show="connect.animations.sendOSToDevice.value" >
+            <div class="iconsContainer">
+                <span class="" ng-include src="connect.animations.sendOSToDevice.iconLeft" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.sendOSToDevice.iconMiddle" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.sendOSToDevice.iconRight" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+            </div>
+            <div class="legend">{{connect.animations.sendOSToDevice.legend}}</div>
+            <div class="progress">{{connect.animations.sendOSToDevice.progress}}</div>
+        </div>   
+    
+        <div class="animation" ng-show="connect.animations.deviceConnectionFailed.value" >
+            <div class="iconsContainer">
+                <span class="" ng-include src="connect.animations.deviceConnectionFailed.iconLeft" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.deviceConnectionFailed.iconMiddle" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+                <span class="" ng-include src="connect.animations.deviceConnectionFailed.iconRight" ng-class="" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title=""></span>
+            </div>
+            <div class="legend">{{connect.animations.deviceConnectionFailed.legend}}</div>
+            <div class="progress">{{connect.animations.deviceConnectionFailed.progress}}</div>
+        </div>     
+</div>

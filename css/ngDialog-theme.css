@@ -1,0 +1,188 @@
+@keyframes ngdialog-popin {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(0.96);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes ngdialog-popout {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.96);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-closing .ngdialog-content {
+    -webkit-animation: none;
+    animation: ngdialog-popout .5s;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    -webkit-animation: none;
+    animation: ngdialog-popin .5s;
+}
+
+.ngdialog.ngdialog-theme-default {
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    background: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    padding: 1.5rem 1.5rem 4.75rem 1.5rem;
+    width: auto;
+}
+
+.ngdialog.ngdialog-theme-default:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close {
+    border-radius: 0.5rem;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close:before {
+    border-radius: 0.1875rem;
+    font-size: 1.625rem;
+    height: 1.875rem;
+    line-height: 1.625rem;
+    right: 0.1875rem;
+    top: 0.1875rem;
+    width: 1.875rem;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close:hover:before,
+.ngdialog.ngdialog-theme-default .ngdialog-close:active:before {
+
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-message {
+    margin: 0;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-long-message {
+    margin: 0;
+    white-space: normal;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-title {
+    text-align: center; 
+    font-size: 1.25rem;
+    padding-bottom: 1rem;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-input {
+    margin-bottom: 1rem;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-input textarea,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="text"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="password"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="email"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="url"] {
+    border-radius: 0.5rem;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-input textarea:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="text"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="password"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="email"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="url"]:focus {
+    box-shadow: none;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-buttons {
+    position: absolute;
+    bottom:0;
+    left: 0;
+    right: 0;
+    height: 3.75rem;
+    background-color: #f1f1f2;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-buttons:after {
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button {
+    padding: 0 0.75rem;
+    height: 1.875rem;
+    border-radius: 0.25rem;
+    text-transform: none;
+}
+
+.ngdialog.ngdialog-theme-default A.ngdialog-button {
+    text-decoration: none;
+    padding-top: 0.6rem;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-primary {
+    background-color: none;
+    background-image: linear-gradient(0deg, #0098d1, #00adef);
+    color: #fff;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-primary:hover {
+    background-image: linear-gradient(0deg, #00679d, #0087c3);
+    background-color: none;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-secondary {
+    background-image: linear-gradient(0deg, #dbdcde, #e6e7e8);
+    background-color: none;
+    text-shadow: 0 0.0625rem 0 #fff;
+    color: #3a3a3c;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-secondary:hover {
+    background-image: none;
+    background-color: #c6c8ca;
+}
+
+.ngdialog.ngdialog-theme-default A.ngdialog-button:active,
+.ngdialog.ngdialog-theme-default .ngdialog-button.ng-click-active, 
+.ngdialog.ngdialog-theme-default .ngdialog-button.ng-click-active:hover {
+    background-color: #808284;
+    background-image: none;
+    color: #3a3a3c;
+    text-shadow: none;
+}

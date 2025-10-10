@@ -1,0 +1,37 @@
+#DialogDuplicates {
+    color: #58585a;
+    letter-spacing: -0.01em;
+    font-weight: normal;
+    width: 35rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#DialogDuplicates .warnIcon {
+    position: absolute;
+    left: 1.5625rem;
+    top: 3.5625rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+#DialogDuplicates .title,
+#DialogDuplicates .message {
+    margin-left: 7.5rem;
+    margin-right: 7.5rem;
+}
+
+#DialogDuplicates .title {
+    font-size: 2.3rem;
+    line-height: 2.5rem;
+    top: 3.5625rem;
+    color: #3a3a3c;
+}
+
+#DialogDuplicates .message {
+    width: 26.5rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

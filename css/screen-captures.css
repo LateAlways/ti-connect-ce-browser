@@ -1,0 +1,304 @@
+#ScreenCaptures {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: white;
+    vertical-align: text-top;
+    padding-bottom: 1rem;
+    border-top: 0.5rem solid transparent;
+    min-width: 26rem;
+}
+
+#ScreenCaptures.primary {
+    border-top-color: #98cdee;
+}
+
+#ScreenCaptures .ScreenPlaceholder {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+}
+
+#ScreenCaptures .ScreenPlaceholder.ng-hide-add {
+    transition: all ease-out 0.25s;
+}
+
+#ScreenCaptures .ScreenPlaceholder.ng-hide-remove {
+    transition: all ease-in 2s;
+}
+
+#ScreenCaptures .ScreenPlaceholder.ng-hide {
+    opacity: 0;
+}
+
+#ScreenCaptures .ScreenPlaceholder SVG {
+    width: 7rem;
+    padding: 0.5rem;
+    margin: 1rem;
+    border: 0.3rem dashed #bbb;
+    border-radius: 1rem;
+}
+
+#ScreenCaptures .button .icon_fill {
+    fill: #bbb;
+}
+
+#ScreenCaptures .button.hover .icon_fill {
+    fill: #666
+}
+
+#ScreenCaptures .button.ng-click-active .icon_fill {
+    fill: #000;
+}
+
+#ScreenCaptures .ScreenCaptureBox {
+    display: inline-block;
+    width: 24.43rem;
+    height: 20.86rem;
+    margin-top: calc(1rem + 2px);
+    margin-left: calc(1rem + 2px);
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+@keyframes screenCaptureEnter {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(0.96);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#ScreenCaptures .ScreenCaptureBox.ng-enter {
+    animation: screenCaptureEnter 0.75s linear;
+}
+
+@keyframes screenCaptureLeave {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        max-width: 100rem;
+    }
+    25% {
+        transform: scale(0.96);
+        opacity: 1;
+        max-width: 100rem;
+    }
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+        max-width: 100rem;
+    }
+    65% {
+        transform: scale(0);
+        opacity: 0;
+        max-width: 10em;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+        max-width: 0;
+    }
+}
+
+#ScreenCaptures .ScreenCaptureBox.ng-leave {
+    animation: screenCaptureLeave 1.25s linear;
+}
+
+#ScreenCaptures .ScreenCapture {
+    position: relative;
+    background-color: #d5d5d5;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 0.125rem 0.3rem 0 rgba(0, 0, 0, 0.3);
+    margin: 2px;
+    overflow: hidden;
+}
+
+#ScreenCaptures .ScreenCaptureBox.selected .ScreenCapture {
+    margin: 0;
+    border: 2px solid #adadad;
+}
+
+#ScreenCaptures.primary .ScreenCaptureBox.selected .ScreenCapture {
+    margin: 0;
+    border: 2px solid #3499dd;
+}
+
+#ScreenCaptures .ScreenCapture .ScreenName {
+    position: relative;
+    background-color: #d5d5d5;
+    color: #585858;
+    padding: 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    white-space: nowrap;
+    text-align: left;
+}
+
+#ScreenCaptures .ScreenCapture .ScreenName .screen_name {
+    max-width: 20rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#ScreenCaptures .ScreenCapture .deleteButton {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    cursor: pointer;
+}
+
+#ScreenCaptures .deleteButton SVG {
+    width: 1.5rem;
+}
+
+#ScreenCaptures .deleteButton .icon_fill {
+    fill: black;
+}
+
+#ScreenCaptures .deleteButton.hover .icon_fill {
+    fill: #fff;
+}
+
+#ScreenCaptures .deleteButton.ng-click-active .icon_fill {
+    fill: #aaa;
+}
+
+#ScreenCaptures .ScreenCapture .Screen {
+    width: 23.14rem;
+    /* 324/14 */
+    height: 17.43rem;
+    /* 244/14 */
+    background-color: white;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+#ScreenCaptures .ScreenCapture .Screen IMG {
+    padding: 2px;
+    width: 22.86rem;
+    height: 17.14rem;
+}
+
+#ScreenCaptures .ScreenCapture .Screen IMG.border {
+    padding: 1px;
+    border: 1px solid black;
+}
+
+#ScreenCaptures .screenCaptureImg {
+    image-rendering: pixelated;
+}
+
+#ScreenCaptures .ScreenCapture .animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#ScreenCaptures .screen_dirty {
+    cursor: default;
+    padding: 0.1rem;
+}
+
+@keyframes screenZoomOpen {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+@keyframes screenZoomClose {
+    0% {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+#screenZoomBackground {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    animation: screenZoomOpen 0.5s;
+    z-index: 10000;
+}
+
+#screenZoomBackground.ng-hide-add {
+    animation: screenZoomClose 0.75s;
+}
+
+.HiddenCanvas {
+    display: none;
+}
+
+#ScreenCaptures .screenZoomNav {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 2rem;
+    background-color: #53585f;
+}
+
+#screenZoomPrev.screenZoomNav {
+    left: 1rem;
+}
+
+#screenZoomNext.screenZoomNav {
+    transform: translateY(-50%) rotate(180deg);
+    right: 1rem;
+    z-index: 2;
+}
+
+#screenZoomTitle {
+    width: 100%;
+    height: 2rem;
+    padding-top: 0.9rem;
+    text-align: center;
+    color: #999;
+    background-color: #111;
+}
+
+#screenZoomClose {
+    position: absolute;
+    top: 0.45rem;
+    right: 1rem;
+    padding: 0.5rem 1.25rem 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    color: #999;
+    background-color: #8a1c10;
+    z-index: 2;
+}
+
+#ScreenCaptures .screenZoomNav SVG {
+    fill: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 1.25rem;
+}

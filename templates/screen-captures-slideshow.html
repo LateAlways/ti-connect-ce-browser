@@ -1,0 +1,6 @@
+    <div id="screenZoomBackground" ng-show="connect.zoomScreen.screen" tabindex="0" ng-keydown="connect.screenZoomKeypress($event)">
+        <div id="screenZoomTitle">{{connect.zoomScreen.screen.name}}</div>
+        <div id="screenZoomClose" ng-click="connect.screenZoomClose()">Exit</div>
+        <div class="screenZoomNav" id="screenZoomPrev" ng-show="connect.screenZoomPrevScreen()" ng-click="connect.screenZoomPrev()" ng-include src="'images/splitter_chevron.svg'"></div>
+        <div class="screenZoomNav" id="screenZoomNext" ng-show="connect.screenZoomNextScreen()" ng-click="connect.screenZoomNext()" ng-include src="'images/splitter_chevron.svg'"></div>
+    </div>

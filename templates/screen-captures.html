@@ -1,0 +1,21 @@
+<div id="ScreenCaptures" ng-class="{primary:connect.primary === connect.screens}" ng-click="connect.clickScreenCapturesArea()">
+    <div class="ScreenPlaceholder" ng-hide="model.screens.length">
+        <span class="button" ng-include src="'images/toolbar_capture.svg'" ng-click="connect.takeScreenCap()" ng-class="{active: connect.currentDevice, hover: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover=false" title="Take a screen capture of this calculator"></span>
+        <div>Press to capture calculator screen.</div>
+    </div>
+    <div id="ScreenBox{{screen.id}}" class="ScreenCaptureBox" ng-repeat="screen in model.screens track by $index" ng-click="connect.screenClick(screen, $event)" ng-dblclick="connect.screenZoomStart()" ng-class="{selected:screen.selected}">
+        <div class="ScreenCapture" draggable="true" draggablescreen screen="{{screen}}">
+            <div class="ScreenName">
+                <div class="button deleteButton" ng-click="connect.deleteScreenCapture(screen)" ng-include="'images/icon_close.svg'" ng-class="{hover: hover}" ng-mouseenter="hover=true" ng-mouseleave="hover=false" title="Delete screen capture"></div>
+                <span class="screen_name" contenteditable contenteditablescreen="true" ng-model="screen.name" screen="{{screen}}">{{screen.name}}</span><span class="screen_dirty" title="This screen has not been saved" ng-show="screen.dirty">*</span>
+            </div>
+            <div class="Screen" id="screen{{screen.id}}">
+                <img id="ScreenImg{{screen.id}}" class="screenCaptureImg" ng-src="{{screen.imgSrc}}" ng-show="screen.imgSrc" ng-class="{border:screen.border}">
+                <div class="animation" ng-hide="screen.imgSrc">
+                    <span class="" ng-include src="'images/animation_capture.svg'"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <screen-captures-slideshow></screen-captures-slideshow>
+</div>

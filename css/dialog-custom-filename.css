@@ -1,0 +1,21 @@
+#DialogCustomFilename {
+}
+
+#DialogCustomFilename input {
+    width: 15rem;
+    height: 2rem;
+    border: 1px solid #e7e7e8;
+    transition: all linear 0.5s;
+}
+
+#DialogCustomFilename input.ng-invalid {
+    color: white;
+    background: #F33;
+}
+
+#DialogCustomFilename .ngdialog-input {
+    display: table;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+}

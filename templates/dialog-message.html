@@ -1,0 +1,11 @@
+<div id="DialogMessage">
+    <div class="ngdialog-message">
+        <img class="appIcon" ng-src="{{ngDialogData.appIcon}}" ng-show="ngDialogData.appIcon">
+        <div class="appName" ng-show="ngDialogData.title">{{ngDialogData.title}}</div>
+        <div class="version" ng-show="ngDialogData.message">{{ngDialogData.message}}</div>
+    </div>
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog(ngDialogData.confirm)" ng-show="ngDialogData.confirm">{{ngDialogData.confirm}}</button>
+        <button type="button" autofocus class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog(ngDialogData.close)">{{ngDialogData.close}}</button>
+    </div>
+</div>

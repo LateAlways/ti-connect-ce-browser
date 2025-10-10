@@ -1,0 +1,18 @@
+<div id="DialogCustomFilename">
+    <div class="ngdialog-message">
+        <p>
+            Custom {{ngDialogData.dataType}} names can be up to {{ngDialogData.maxLength}} characters in length.
+        </p>
+        <p>
+            The first character can be A-Z or θ. <br>
+            The remaining characters can be A-Z, θ or 0-9
+        </p>
+    </div>
+    <div class="ngdialog-input">
+        <input ng-model="ngDialogData.newName" ng-pattern="ngDialogData.nameRegex" required autofocus>
+    </div>
+    <div class="ngdialog-buttons">
+        <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog('Cancel')">Cancel</button>
+        <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="closeThisDialog('Done')" autofocus>Done</button>
+    </div>
+</div>
