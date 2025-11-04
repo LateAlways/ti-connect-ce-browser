@@ -35,3 +35,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./www
         publish_branch: gh-pages
+        cname: ticonnectce.latealways.dev
