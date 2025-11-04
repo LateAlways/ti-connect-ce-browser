@@ -384,7 +384,6 @@ window.latealways_patch = {
             };
             currentDevice = device_ret
             events.onDeviceAdded.forEach(e => e(device_ret));
-            setTimeout(() => angular.element("#refresh").controller().refresh(), 500);
             
             return device
         })
@@ -454,3 +453,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
         return oldHandleDrop(newe);
     })
 });
+
