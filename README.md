@@ -32,7 +32,7 @@
     <a href="#about-the-project">About The Project</a>
   </li>
   <li>
-    <a href="#getting-started">Usage</a>
+    <a href="#building">Building</a>
   </li>
   <li><a href="#credits">Credits</a></li>
   <li><a href="#contributing">Contributing</a></li>
