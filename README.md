@@ -50,20 +50,15 @@ In most schools nowadays, students use chromebooks. These chromebooks are usuall
 There MAY be some bugs so USE AT YOUR OWN RISK.
 
 
-## Usage
+## Building
+The building process requires python code execution with access to the system.
 
-For the install process (putting it on a webserver) the Automatic installation requires python code execution with access to the system.
-
-If you are using a chromebook, you can either use the demo from above or follow the Manual installation.
-
-### 1. Manual installation - DEPRECATED. USE AUTOMATIC INSTALLATION INSTEAD
-THIS DOESN'T WORK ANYMORE.
-### 2. Automatic installation - Run a python script that will create a `www` folder that you can later on upload to a web server.
 1. Clone the repo. (`git clone https://github.com/LateAlways/ti-connect-ce-browser.git`)
 2. Enter the newly created directory. (`cd ti-connect-ce-browser`)
 3. Run `generate.py`. (`python generate.py`)
-4. Done! The files should be in a new folder titled `www`. You can upload these files anywhere on a webserver and then access the app from a browser.
+4. Done! The build/files should be in a new folder titled `www`.
 
+You can upload these files on a webserver and then access the app from a browser.
 ## Credits
 
 The real-time python file conversion wouldn't have been possible without [tivars_lib_cpp](https://github.com/adriweb/tivars_lib_cpp) by adriweb.
